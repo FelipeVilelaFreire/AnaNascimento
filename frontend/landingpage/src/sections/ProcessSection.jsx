@@ -1,0 +1,27 @@
+import { ClipboardCheck, FileSearch, Handshake, MessagesSquare } from "lucide-react";
+import { Icon, Surface, Text, layoutStyle, resolveSurfaceSlot } from "@/foundation";
+import { SectionShell } from "./SectionShell";
+
+const processIcons = [MessagesSquare, FileSearch, Handshake, ClipboardCheck];
+
+export function ProcessSection({ content, presentation }) {
+  const stepSurface = resolveSurfaceSlot(presentation?.surfaces?.step, "legal.panelSolid");
+
+  return (
+    <SectionShell eyebrow={content.process.eyebrow} id="atendimento" layout={presentation?.layout} title={content.process.title}>
+      <div className="processGrid layoutGrid" style={layoutStyle(presentation?.layout)}>
+        {content.process.steps.map((step, index) => {
+          const StepIcon = processIcons[index] || ClipboardCheck;
+          return (
+          <Surface {...stepSurface} className="processCard" data-layout-item key={step.title}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <Icon source={StepIcon} size={30} strokeWidth={1.6} />
+            <h3>{step.title}</h3>
+            <Text as="p" tone="muted">{step.description}</Text>
+          </Surface>
+        );
+        })}
+      </div>
+    </SectionShell>
+  );
+}
