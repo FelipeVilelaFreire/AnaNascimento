@@ -1,10 +1,9 @@
 import {
   AboutSection,
   ContactSection,
-  DifferenceSection,
+  DifferenceAreasSection,
   FaqSection,
   HeroSection,
-  PracticeAreasSection,
   ProcessSection,
 } from "@/sections";
 import { sectionsLayoutPresentation } from "./sectionsLayout.presentation";
@@ -12,10 +11,9 @@ import { sectionsLayoutPresentation } from "./sectionsLayout.presentation";
 const sectionComponents = {
   about: AboutSection,
   contact: ContactSection,
-  difference: DifferenceSection,
+  differenceAreas: DifferenceAreasSection,
   faq: FaqSection,
   hero: HeroSection,
-  practiceAreas: PracticeAreasSection,
   process: ProcessSection,
 };
 

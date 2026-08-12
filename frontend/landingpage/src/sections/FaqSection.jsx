@@ -3,7 +3,7 @@ import { SectionShell } from "./SectionShell";
 
 export function FaqSection({ content }) {
   return (
-    <SectionShell className="faq" eyebrow={content.faq.eyebrow} id="faq" title={content.faq.title}>
+    <SectionShell className="faq" id="faq" title={content.faq.title}>
       <div className="faqList">
         {content.faq.items.map((item) => (
           <details key={item.question}>

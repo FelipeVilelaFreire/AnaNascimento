@@ -1,7 +1,27 @@
+@import url("https://ananascimento.adv.br/wp-content/uploads/elementor/google-fonts/css/marcellus.css?ver=1744810128");
+@import url("https://ananascimento.adv.br/wp-content/uploads/elementor/google-fonts/css/karla.css?ver=1744810135");
+
 :root {
   color-scheme: light;
   scroll-behavior: smooth;
-  --font-marcellus: Marcellus, Arial, Helvetica, sans-serif;
+  --font-marcellus: Marcellus, Georgia, serif;
+  --font-karla: Karla, Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
+  --e-global-color-primary: #2e3454;
+  --e-global-color-secondary: #f2c455;
+  --e-global-color-text: #2e3454;
+  --e-global-color-accent: #f2c455;
+  --e-global-color-8a7e426: #ffffff;
+  --e-global-color-f709b3e: #e1e1e1;
+  --e-global-color-6d92ba1: #ffffff1a;
+  --e-global-color-1b523f7: #ffffff80;
+  --e-global-typography-primary-font-family: "Marcellus";
+  --e-global-typography-secondary-font-family: "Karla";
+  --e-global-typography-secondary-font-weight: 400;
+  --e-global-typography-text-font-family: "Karla";
+  --e-global-typography-text-font-weight: 400;
+  --e-global-typography-accent-font-family: "Marcellus";
+  --font-body: var(--font-karla);
+  --font-heading: var(--font-marcellus);
 }
 
 * {
@@ -17,7 +37,9 @@ body {
 body {
   background: #ffffff;
   color: #2e3454;
-  font-family: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-karla);
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 a {
@@ -33,11 +55,13 @@ textarea {
 
 .page {
   min-height: 100vh;
-  --ana-navy: #2e3454;
-  --ana-gold: #f2c455;
-  --ana-border: #e1e1e1;
-  --ana-white-10: #ffffff1a;
-  --ana-white-50: #ffffff80;
+  --ana-navy: var(--e-global-color-primary);
+  --ana-gold: var(--e-global-color-secondary);
+  --ana-border: var(--e-global-color-f709b3e);
+  --ana-white-10: var(--e-global-color-6d92ba1);
+  --ana-white-50: var(--e-global-color-1b523f7);
+  --font-body: var(--font-karla) !important;
+  --font-heading: var(--font-marcellus) !important;
   background: var(--color-background);
   color: var(--color-text);
   transition: background 180ms ease, color 180ms ease;
@@ -133,8 +157,8 @@ textarea {
 .brandLogo {
   display: block;
   width: auto;
-  max-width: 168px;
-  height: 48px;
+  max-width: 180px;
+  height: 75px;
   object-fit: contain;
 }
 
@@ -155,19 +179,22 @@ textarea {
   justify-content: center;
   gap: 8px;
   color: #ffffff;
-  font-size: 0.83rem;
+  font-size: 0.98rem;
   font-weight: 800;
   line-height: 1;
 }
 
 .desktopNav a,
+.desktopNav button,
 .siteFooter a {
+  color: #ffffff;
   transition: color 150ms ease;
 }
 
 .desktopNav a:hover,
+.desktopNav button:hover,
 .siteFooter a:hover {
-  color: var(--ana-gold);
+  color: var(--ana-gold) !important;
 }
 
 .headerActions {
@@ -234,9 +261,22 @@ main {
 }
 
 .section {
-  width: min(var(--ana-container-max-width, 1180px), calc(100% - (var(--ana-container-gutter-desktop, 16px) * 2)));
+  width: min(var(--ana-container-max-width, 1140px), calc(100% - (var(--ana-container-gutter-desktop, 16px) * 2)));
   margin: 0 auto;
-  padding: 92px 0;
+  padding: 96px 0;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 620ms var(--ease-standard, ease),
+    transform 620ms var(--ease-standard, ease);
+}
+
+[data-reveal-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .layoutGrid {
@@ -252,23 +292,23 @@ main {
 
 .sectionHeader {
   display: grid;
-  max-width: 760px;
+  max-width: 900px;
   gap: 14px;
-  margin: 0 auto 42px;
+  margin: 0 auto 46px;
   text-align: center;
 }
 
 .sectionHeader h2,
 .hero h1 {
   margin: 0;
-  font-family: var(--font-marcellus), Marcellus, Arial, Helvetica, sans-serif;
+  font-family: var(--font-marcellus), Georgia, serif;
   letter-spacing: 0;
 }
 
 .sectionHeader h2 {
   color: var(--color-text);
-  font-size: clamp(2.05rem, 3.6vw, 3rem);
-  font-weight: 500;
+  font-size: clamp(2.15rem, 3.8vw, 3.5rem);
+  font-weight: 400;
   line-height: 1.14;
   text-transform: uppercase;
 }
@@ -283,10 +323,10 @@ main {
 }
 
 .eyebrow {
-  color: var(--color-primary);
+  color: var(--ana-gold);
   font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -294,51 +334,53 @@ main {
   position: relative;
   display: grid;
   grid-template-columns: repeat(var(--ana-grid-columns-desktop, 16), minmax(0, 1fr));
-  align-items: center;
+  align-items: end;
   gap: var(--ana-grid-gap-desktop, 56px);
-  min-height: 760px;
+  min-height: 720px;
   width: 100%;
-  padding: 170px max(24px, calc((100vw - 1180px) / 2)) 80px;
+  padding: 142px max(24px, calc((100vw - 1140px) / 2)) 0;
   background:
-    linear-gradient(90deg, rgba(46, 52, 84, 0.94), rgba(46, 52, 84, 0.88)),
-    url("https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=1400&q=80") center / cover,
+    linear-gradient(90deg, rgba(46, 52, 84, 0.97), rgba(46, 52, 84, 0.9)),
+    url("/assets/images/ana-office.jpg") 13% center / 520px auto no-repeat,
     var(--ana-navy);
   overflow: hidden;
 }
 
 .hero .eyebrow {
   color: var(--ana-gold);
-  font-family: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  font-family: var(--font-marcellus), Georgia, serif;
+  font-size: clamp(1.35rem, 2.1vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .heroCopy {
   display: grid;
   z-index: 2;
-  grid-column: span var(--ana-grid-item-span-desktop, 9);
-  gap: 22px;
+  grid-column: span 9;
+  gap: 24px;
   align-content: center;
+  align-self: center;
+  padding-bottom: 92px;
 }
 
 .hero h1 {
-  max-width: 680px;
+  max-width: 780px;
   color: #ffffff;
-  font-family: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
-  font-size: clamp(2.2rem, 4.4vw, 4.3rem);
-  font-weight: 900;
-  line-height: 1.12;
+  font-family: var(--font-marcellus), Georgia, serif;
+  font-size: clamp(3.05rem, 4.6vw, 4.75rem);
+  font-weight: 400;
+  line-height: 1.08;
 }
 
 .heroDescription {
   margin: 0;
-  max-width: 620px;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 1.03rem;
-  font-weight: 500;
-  line-height: 1.7;
+  max-width: 790px;
+  color: #ffffff;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.72;
 }
 
 .heroActions {
@@ -348,16 +390,28 @@ main {
   gap: 18px;
 }
 
+.heroActions a:first-child button {
+  min-height: 50px !important;
+  min-width: 256px !important;
+  border-color: var(--ana-gold) !important;
+  background: var(--ana-gold) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  text-transform: uppercase;
+}
+
 .secondaryLink {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #ffffff;
-  font-weight: 800;
+  color: var(--ana-gold);
+  font-family: var(--font-marcellus), Georgia, serif;
+  font-size: 1.08rem;
+  font-weight: 400;
 }
 
 .heroStats {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   max-width: 690px;
@@ -388,35 +442,35 @@ main {
 .heroMedia {
   position: relative;
   z-index: 1;
-  grid-column: span var(--ana-grid-item-span-desktop, 7);
-  min-height: 540px;
-  overflow: hidden;
-  border: 1px solid var(--ana-white-10);
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.22);
+  grid-column: span 7;
+  align-self: end;
+  min-height: 580px;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  --ui-surface-base-background: transparent !important;
+  --ui-surface-resolved-border-color: transparent !important;
 }
 
 .heroMedia::after {
-  position: absolute;
-  inset: auto 0 0;
-  height: 20%;
-  background: linear-gradient(180deg, transparent, rgba(46, 52, 84, 0.55));
-  content: "";
+  display: none;
 }
 
 .heroMedia img {
   display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 540px;
-  object-fit: cover;
+  width: min(430px, 100%);
+  height: auto;
+  min-height: 0;
+  margin-left: auto;
+  object-fit: contain;
 }
 
 .heroBadge {
   position: absolute;
-  right: 18px;
-  bottom: 18px;
+  right: 0;
+  bottom: 36px;
   z-index: 2;
   display: inline-flex;
   align-items: center;
@@ -428,6 +482,68 @@ main {
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important;
   --ui-surface-base-background: #ffffff !important;
   font-weight: 800;
+}
+
+.differenceAreas,
+.about,
+.process,
+.faq,
+.contact {
+  width: 100%;
+  padding-right: max(18px, calc((100vw - 1140px) / 2));
+  padding-left: max(18px, calc((100vw - 1140px) / 2));
+}
+
+.differenceAreas,
+.process,
+.contact {
+  background: #ffffff;
+}
+
+.about,
+.faq {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(46, 52, 84, 0.96), rgba(46, 52, 84, 0.9)),
+    url("/assets/images/ana-office.jpg") center / cover,
+    var(--ana-navy);
+  color: #ffffff;
+}
+
+.about .sectionHeader h2,
+.faq .sectionHeader h2,
+.about .sectionHeader p,
+.faq .sectionHeader p,
+.about .paragraphStack p,
+.faqList p {
+  color: rgba(255, 255, 255, 0.84) !important;
+}
+
+.about .sectionHeader .eyebrow,
+.faq .sectionHeader .eyebrow {
+  color: var(--ana-gold);
+}
+
+.differenceAreas .sectionHeader,
+.process .sectionHeader,
+.contact .sectionHeader {
+  max-width: 880px;
+}
+
+.differenceIntro {
+  display: grid;
+  max-width: 980px;
+  gap: 18px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.differenceIntro p {
+  margin: 0;
+  color: var(--ana-navy);
+  font-size: 1.08rem;
+  line-height: 1.82;
 }
 
 .differenceGrid {
@@ -496,14 +612,17 @@ main {
 
 .practiceGrid {
   display: grid;
+  align-items: stretch;
 }
 
 .practiceCard {
   display: grid;
-  justify-items: center;
-  min-height: 320px;
-  padding-top: 48px !important;
-  padding-bottom: 38px !important;
+  justify-items: start;
+  min-height: 470px;
+  padding-top: 42px !important;
+  padding-right: 34px !important;
+  padding-bottom: 34px !important;
+  padding-left: 34px !important;
   border: 0 !important;
   border-radius: 2px !important;
   background: var(--ana-navy) !important;
@@ -511,13 +630,13 @@ main {
   box-shadow: none !important;
   --ui-surface-base-background: var(--ana-navy) !important;
   --ui-surface-resolved-border-color: var(--ana-navy) !important;
-  text-align: center;
+  text-align: left;
 }
 
 .practiceIcon {
   display: grid;
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   place-items: center;
   color: #ffffff;
 }
@@ -543,8 +662,8 @@ main {
 
 .practiceCard h3 {
   color: #ffffff;
-  font-size: clamp(1.65rem, 2.4vw, 2.25rem);
-  font-weight: 500;
+  font-size: clamp(1.8rem, 2.3vw, 2.35rem);
+  font-weight: 400;
 }
 
 .practiceCard p,
@@ -555,6 +674,20 @@ main {
 
 .practiceCard p {
   color: rgba(255, 255, 255, 0.76) !important;
+}
+
+.practiceCard ul {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.practiceCard li::marker {
+  color: var(--ana-gold);
 }
 
 .practiceCard a {
@@ -574,6 +707,17 @@ main {
   place-items: center;
   text-align: center;
   border-radius: 2px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+.portraitPanel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  object-fit: cover;
 }
 
 .portraitMark {
@@ -593,7 +737,7 @@ main {
 }
 
 .portraitPanel span {
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.76);
   font-weight: 800;
 }
 
@@ -606,8 +750,10 @@ main {
   align-content: start;
   gap: 14px;
   min-height: 240px;
-  border-top: 3px solid var(--ana-gold);
+  border-top: 2px solid var(--ana-gold);
   border-radius: 2px;
+  background: #ffffff !important;
+  --ui-surface-base-background: #ffffff !important;
 }
 
 .processCard > span {
@@ -619,21 +765,57 @@ main {
   color: var(--ana-navy);
 }
 
+.processClosing {
+  display: grid;
+  justify-items: center;
+  gap: 22px;
+  max-width: 920px;
+  margin: 42px auto 0;
+  text-align: center;
+}
+
+.processClosing p {
+  margin: 0;
+  color: var(--ana-navy);
+  font-size: 1.06rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.processHighlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.processHighlights span {
+  min-height: 96px;
+  padding: 18px;
+  border: 1px solid var(--ana-border);
+  border-radius: 2px;
+  color: var(--ana-navy);
+  font-weight: 750;
+  line-height: 1.45;
+}
+
 .faqList {
   display: grid;
   gap: 10px;
+  max-width: 920px;
+  margin: 0 auto;
 }
 
 .faqList details {
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(242, 196, 85, 0.38);
   border-radius: 2px;
-  background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .faqList summary {
   cursor: pointer;
   padding: 20px 22px;
-  color: var(--color-text);
+  color: #ffffff;
   font-weight: 800;
 }
 
@@ -919,15 +1101,18 @@ main {
 
   .hero {
     min-height: auto;
-    padding-top: 118px;
+    padding-top: 132px;
+    padding-bottom: 48px;
   }
 
   .heroMedia {
-    min-height: 420px;
+    min-height: 0;
   }
 
   .heroMedia img {
-    min-height: 420px;
+    width: min(360px, 82vw);
+    min-height: 0;
+    margin: 0 auto;
   }
 
   .heroCopy,
@@ -1019,11 +1204,22 @@ main {
   }
 
   .heroMedia {
-    min-height: 360px;
+    min-height: 0;
   }
 
   .heroMedia img {
-    min-height: 360px;
+    width: min(320px, 90vw);
+    min-height: 0;
+  }
+
+  .heroBadge {
+    right: 50%;
+    bottom: 12px;
+    transform: translateX(50%);
+  }
+
+  .processHighlights {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .portraitPanel {

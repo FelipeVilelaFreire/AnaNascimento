@@ -3,7 +3,7 @@ import "./globals.css";
 export const metadata = {
   title: "Ana Nascimento Advocacia",
   description:
-    "Atendimento juridico humanizado e estrategico em Direito do Trabalho, Civil, Familia, Patrimonial, Imobiliario e Consumidor.",
+    "Atendimento jurídico humanizado e estratégico em Direito do Trabalho, Civil, Família, Patrimonial, Imobiliário e Consumidor.",
 };
 
 export default function RootLayout({ children }) {

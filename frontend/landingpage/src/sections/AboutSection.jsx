@@ -17,8 +17,7 @@ export function AboutSection({ content, presentation }) {
             "--ana-grid-item-span-mobile": layout.media?.span?.mobile,
           }}
         >
-          <div className="portraitMark">AN</div>
-          <span>Dra. Ana Nascimento</span>
+          <img alt="Dra. Ana Nascimento" src={content.assets.portraitImage} />
         </Surface>
         <div
           className="paragraphStack"
@@ -32,7 +31,7 @@ export function AboutSection({ content, presentation }) {
             <Text as="p" key={paragraph}>{paragraph}</Text>
           ))}
           <a href={content.contact.whatsappHref}>
-            <Button icon={<BrandIcon name="whatsapp" size="sm" />}>Fale com a advogada</Button>
+            <Button icon={<BrandIcon name="whatsapp" size="sm" />}>{content.about.cta}</Button>
           </a>
         </div>
       </div>

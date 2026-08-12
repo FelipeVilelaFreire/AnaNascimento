@@ -6,8 +6,8 @@ export function ContactSection({ content, presentation }) {
   const itemSurface = resolveSurfaceSlot(presentation?.surfaces?.item, "legal.panelSoft");
   const items = [
     { icon: <Phone size={18} />, label: "Telefone", value: content.contact.phone, href: content.contact.whatsappHref },
-    { icon: <Mail size={18} />, label: "E-mail", value: content.contact.email, href: `mailto:${content.contact.email}` },
     { icon: <MapPin size={18} />, label: "Endereco", value: content.contact.address, href: content.contact.mapsHref },
+    { icon: <Mail size={18} />, label: "E-mail", value: content.contact.email, href: `mailto:${content.contact.email}` },
   ];
 
   return (

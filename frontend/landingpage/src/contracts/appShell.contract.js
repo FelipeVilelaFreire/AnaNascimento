@@ -153,8 +153,8 @@ export const anaAppShellContract = {
       radiusCorners: "left",
     },
     actions: {
-      themeToggle: true,
-      whatsapp: true,
+      themeToggle: false,
+      whatsapp: false,
     },
   },
   footer: {

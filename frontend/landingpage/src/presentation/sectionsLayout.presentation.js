@@ -2,8 +2,7 @@ export const sectionsLayoutPresentation = {
   screen: "landing.home",
   order: [
     "hero",
-    "difference",
-    "practiceAreas",
+    "differenceAreas",
     "about",
     "process",
     "faq",
@@ -20,19 +19,10 @@ export const sectionsLayoutPresentation = {
         badge: "hero.badge",
       },
     },
-    difference: {
-      enabled: true,
-      id: "diferencial",
-      presentation: "centered-editorial-copy",
-      layout: "content.single",
-      surfaces: {
-        highlight: "legal.panelSoft",
-      },
-    },
-    practiceAreas: {
+    differenceAreas: {
       enabled: true,
       id: "areas",
-      presentation: "navy-icon-grid",
+      presentation: "difference-and-areas",
       layout: "cards.threeUp",
       surfaces: {
         card: "legal.primaryCard",

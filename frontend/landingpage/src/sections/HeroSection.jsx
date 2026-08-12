@@ -1,5 +1,5 @@
-import { ArrowRight, Scale } from "lucide-react";
-import { BrandIcon, Button, Heading, Surface, Text, layoutStyle, resolveLayoutPreset, resolveSurfaceSlot } from "@/foundation";
+import { ArrowUpRight, Phone } from "lucide-react";
+import { Button, Heading, Surface, Text, layoutStyle, resolveLayoutPreset, resolveSurfaceSlot } from "@/foundation";
 
 export function HeroSection({ content, presentation }) {
   const layout = resolveLayoutPreset(presentation?.layout, "hero.split");
@@ -7,7 +7,7 @@ export function HeroSection({ content, presentation }) {
   const badgeSurface = resolveSurfaceSlot(presentation?.surfaces?.badge, "hero.badge");
 
   return (
-    <section className="hero section" id="inicio" style={layoutStyle(layout)}>
+    <section className="hero section" data-reveal id="inicio" style={layoutStyle(layout)}>
       <div
         className="heroCopy"
         style={{
@@ -21,11 +21,10 @@ export function HeroSection({ content, presentation }) {
         <Text as="p" className="heroDescription">{content.hero.description}</Text>
         <div className="heroActions">
           <a href={content.contact.whatsappHref}>
-            <Button appearance="solid" icon={<BrandIcon name="whatsapp" size="xs" />} size="lg">{content.hero.primaryCta}</Button>
+            <Button appearance="solid" icon={<ArrowUpRight size={15} />} iconPosition="end" size="lg">{content.hero.primaryCta}</Button>
           </a>
           <a className="secondaryLink" href="#areas">
             {content.hero.secondaryCta}
-            <ArrowRight size={16} />
           </a>
         </div>
         <div className="heroStats">
@@ -46,10 +45,10 @@ export function HeroSection({ content, presentation }) {
           "--ana-grid-item-span-mobile": layout.media?.span?.mobile,
         }}
       >
-        <img alt="Estatua da Justica" src={content.assets.heroImage} />
+        <img alt="Ana Nascimento Advocacia" src={content.assets.heroImage} />
         <Surface className="heroBadge" {...badgeSurface}>
-          <Scale size={22} />
-          <span>Atendimento estrategico e humanizado</span>
+          <Phone size={20} />
+          <span>{content.contact.phone}</span>
         </Surface>
       </Surface>
     </section>
