@@ -942,11 +942,18 @@ a {
 @media (max-width: 992px) {
   .desktop-nav,
   .header-email {
-    display: none;
+    display: none !important;
   }
 
   .mobile-hamburger {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-container {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .hero-container {
