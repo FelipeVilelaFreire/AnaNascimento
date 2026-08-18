@@ -179,17 +179,17 @@ a {
   height: 18px;
 }
 
-/* 2. Hero Section */
+/* 2. Hero Section - Enquadramento Fluido Universal */
 .hero-section {
   position: relative;
   background:
     linear-gradient(90deg, rgba(46, 52, 84, 0.93), rgba(46, 52, 84, 0.85)),
     url("hero-bg.jpg") center / cover no-repeat fixed,
     var(--color-navy);
-  padding-top: 100px;
-  padding-bottom: 40px;
-  overflow: hidden;
+  padding-top: 85px;
+  padding-bottom: 20px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .hero-container {
@@ -197,7 +197,7 @@ a {
   grid-template-columns: 1.15fr 0.85fr;
   align-items: flex-end;
   gap: 30px;
-  min-height: calc(88vh - 100px);
+  min-height: clamp(480px, 78vh, 640px);
 }
 
 .hero-left {
@@ -977,7 +977,7 @@ a {
 
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
     min-height: auto;
     padding-top: 10px;
   }
@@ -989,21 +989,21 @@ a {
   }
 
   .hero-eyebrow {
-    font-size: 24px;
-    margin-bottom: 8px;
+    font-size: 20px;
+    margin-bottom: 6px;
   }
 
   .hero-title {
-    font-size: 30px;
+    font-size: 24px;
     max-width: 100%;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
 
   .hero-description {
-    font-size: 14.5px;
+    font-size: 13.5px;
     max-width: 100%;
-    margin-bottom: 20px;
-    line-height: 1.5;
+    margin-bottom: 14px;
+    line-height: 1.45;
   }
 
   .hero-right {
@@ -1013,22 +1013,22 @@ a {
   }
 
   .hero-person-img {
-    max-width: 320px;
-    max-height: none;
+    max-width: 240px;
+    max-height: 250px;
     width: 100%;
     height: auto;
-    object-fit: initial;
+    object-fit: contain;
     margin: 0 auto;
   }
 
   .hero-phone-box {
     position: absolute;
-    left: 10px;
-    bottom: 20px;
+    left: 0;
+    bottom: 10px;
     transform: none;
     margin: 0;
-    padding: 10px 18px;
-    font-size: 14px;
+    padding: 8px 14px;
+    font-size: 12.5px;
     width: max-content;
     z-index: 2;
   }
