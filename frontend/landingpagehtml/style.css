@@ -989,32 +989,32 @@ a {
   }
 
   .hero-eyebrow {
-    font-size: 22px;
-    margin-bottom: 8px;
+    font-size: 20px;
+    margin-bottom: 6px;
   }
 
   .hero-title {
-    font-size: 28px;
+    font-size: 26px;
     max-width: 100%;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .hero-description {
-    font-size: 14.5px;
+    font-size: 13.5px;
     max-width: 100%;
-    margin-bottom: 18px;
-    line-height: 1.5;
+    margin-bottom: 16px;
+    line-height: 1.45;
   }
 
   .hero-right {
     justify-content: center;
     position: relative;
-    margin-top: 10px;
+    margin-top: 8px;
   }
 
   .hero-person-img {
-    max-width: 290px;
-    max-height: 320px;
+    max-width: 320px;
+    max-height: 350px;
     width: 100%;
     height: auto;
     object-fit: contain;
