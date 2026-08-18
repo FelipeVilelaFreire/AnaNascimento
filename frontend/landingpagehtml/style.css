@@ -1013,8 +1013,8 @@ a {
   }
 
   .hero-person-img {
-    max-width: 320px;
-    max-height: 350px;
+    max-width: 324px;
+    max-height: 365px;
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -1094,11 +1094,12 @@ a {
 
 @media (max-width: 576px) {
   .hero-section {
-    padding-top: 90px;
+    padding-top: 135px;
+    padding-bottom: 30px;
   }
 
   .hero-title {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .section-title-center h2 {
