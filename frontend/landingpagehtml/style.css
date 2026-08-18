@@ -179,15 +179,15 @@ a {
   height: 18px;
 }
 
-/* 2. Hero Section - Enquadramento Fluido Universal */
+/* 2. Hero Section - Proporção Imponente (88% Viewport no Desktop) */
 .hero-section {
   position: relative;
   background:
     linear-gradient(90deg, rgba(46, 52, 84, 0.93), rgba(46, 52, 84, 0.85)),
     url("hero-bg.jpg") center / cover no-repeat fixed,
     var(--color-navy);
-  padding-top: 85px;
-  padding-bottom: 20px;
+  padding-top: 110px;
+  padding-bottom: 40px;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -197,7 +197,7 @@ a {
   grid-template-columns: 1.15fr 0.85fr;
   align-items: flex-end;
   gap: 30px;
-  min-height: clamp(480px, 78vh, 640px);
+  min-height: clamp(560px, 86vh, 720px);
 }
 
 .hero-left {
@@ -989,32 +989,32 @@ a {
   }
 
   .hero-eyebrow {
-    font-size: 20px;
-    margin-bottom: 6px;
+    font-size: 22px;
+    margin-bottom: 8px;
   }
 
   .hero-title {
-    font-size: 24px;
+    font-size: 28px;
     max-width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   .hero-description {
-    font-size: 13.5px;
+    font-size: 14.5px;
     max-width: 100%;
-    margin-bottom: 14px;
-    line-height: 1.45;
+    margin-bottom: 18px;
+    line-height: 1.5;
   }
 
   .hero-right {
     justify-content: center;
     position: relative;
-    margin-top: 0;
+    margin-top: 10px;
   }
 
   .hero-person-img {
-    max-width: 240px;
-    max-height: 250px;
+    max-width: 290px;
+    max-height: 320px;
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -1023,12 +1023,12 @@ a {
 
   .hero-phone-box {
     position: absolute;
-    left: 0;
-    bottom: 10px;
+    left: 10px;
+    bottom: 15px;
     transform: none;
     margin: 0;
-    padding: 8px 14px;
-    font-size: 12.5px;
+    padding: 9px 16px;
+    font-size: 13.5px;
     width: max-content;
     z-index: 2;
   }
