@@ -53,15 +53,22 @@ a {
 
 /* Scroll to Reveal Animations */
 .reveal {
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1), transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .js-reveal-ready .reveal:not(.active) {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
 .reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 /* Stagger delay helpers */

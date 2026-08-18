@@ -503,10 +503,11 @@
 
     // IntersectionObserver para Scroll to Reveal Animations
     document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("js-reveal-ready");
       const observerOptions = {
         root: null,
-        rootMargin: "0px 0px -12% 0px",
-        threshold: 0.15
+        rootMargin: "0px 0px -5% 0px",
+        threshold: 0.05
       };
 
       const observer = new IntersectionObserver((entries, observer) => {
@@ -519,8 +520,9 @@
       }, observerOptions);
 
       document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    });
 
-      // Mobile Drawer Toggle
+    // Mobile Drawer Toggle
     const hamburgerBtn = document.getElementById("hamburger-btn");
     const drawerCloseBtn = document.getElementById("drawer-close-btn");
     const mobileDrawer = document.getElementById("mobile-drawer");
