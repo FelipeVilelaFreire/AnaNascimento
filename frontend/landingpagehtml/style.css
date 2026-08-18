@@ -979,7 +979,7 @@ a {
     grid-template-columns: 1fr;
     gap: 20px;
     min-height: auto;
-    padding-top: 10px;
+    padding-top: 75px;
   }
 
   .hero-left {
