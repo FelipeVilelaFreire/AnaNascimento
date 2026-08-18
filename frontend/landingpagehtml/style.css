@@ -979,7 +979,7 @@ a {
     grid-template-columns: 1fr;
     gap: 20px;
     min-height: auto;
-    padding-top: 75px;
+    padding-top: 50px;
   }
 
   .hero-left {
@@ -1013,8 +1013,8 @@ a {
   }
 
   .hero-person-img {
-    max-width: 324px;
-    max-height: 365px;
+    max-width: 400px;
+    max-height: 400px;
     width: 100%;
     height: auto;
     object-fit: contain;
