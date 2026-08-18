@@ -41,8 +41,35 @@
         <i data-lucide="mail"></i>
         <span>ana@ananascimento.adv.br</span>
       </div>
+      <button class="mobile-hamburger" id="hamburger-btn" aria-label="Abrir Menu">
+        <i data-lucide="menu"></i>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile Drawer & Overlay -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Menu Mobile">
+    <div class="drawer-header">
+      <img src="ana-logo-dark.png" alt="Ana Nascimento Advocacia" style="height: 36px;">
+      <button class="drawer-close" id="drawer-close-btn" aria-label="Fechar Menu">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="#inicio" class="drawer-link">Início</a>
+      <a href="#area" class="drawer-link">Áreas de Atuação</a>
+      <a href="#sobre" class="drawer-link">Sobre Nós</a>
+      <a href="#faq" class="drawer-link">Perguntas Frequentes</a>
+      <a href="#contato" class="drawer-link">Contato</a>
+    </nav>
+    <div class="drawer-footer">
+      <a href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0" target="_blank" class="btn-gold">
+        <i data-lucide="arrow-up-right"></i>
+        <span>FALE COM ADVOGADA</span>
+      </a>
+    </div>
+  </aside>
 
   <!-- 2. Hero Section -->
   <section class="hero-section" id="inicio">
@@ -492,6 +519,32 @@
       }, observerOptions);
 
       document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+      // Mobile Drawer Toggle
+    const hamburgerBtn = document.getElementById("hamburger-btn");
+    const drawerCloseBtn = document.getElementById("drawer-close-btn");
+    const mobileDrawer = document.getElementById("mobile-drawer");
+    const drawerBackdrop = document.getElementById("drawer-backdrop");
+    const drawerLinks = document.querySelectorAll(".drawer-link");
+
+    function openDrawer() {
+      mobileDrawer.classList.add("active");
+      drawerBackdrop.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDrawer() {
+      mobileDrawer.classList.remove("active");
+      drawerBackdrop.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    if (hamburgerBtn) hamburgerBtn.addEventListener("click", openDrawer);
+    if (drawerCloseBtn) drawerCloseBtn.addEventListener("click", closeDrawer);
+    if (drawerBackdrop) drawerBackdrop.addEventListener("click", closeDrawer);
+
+    drawerLinks.forEach(link => {
+      link.addEventListener("click", closeDrawer);
     });
   </script>
 </body>

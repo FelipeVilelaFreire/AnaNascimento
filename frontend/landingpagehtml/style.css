@@ -940,8 +940,13 @@ a {
 
 /* Responsividade Mobile & Tablet */
 @media (max-width: 992px) {
-  .desktop-nav {
+  .desktop-nav,
+  .header-email {
     display: none;
+  }
+
+  .mobile-hamburger {
+    display: block;
   }
 
   .hero-container {
