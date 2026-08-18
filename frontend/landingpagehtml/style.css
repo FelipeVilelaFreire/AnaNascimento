@@ -207,7 +207,7 @@ a {
 .hero-eyebrow {
   color: var(--color-gold);
   font-family: var(--font-heading);
-  font-size: 34px;
+  font-size: 40px;
   font-weight: 400;
   line-height: 1.15;
   margin-bottom: 12px;
@@ -989,8 +989,8 @@ a {
   }
 
   .hero-eyebrow {
-    font-size: 20px;
-    margin-bottom: 6px;
+    font-size: 26px;
+    margin-bottom: 8px;
   }
 
   .hero-title {
