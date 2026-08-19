@@ -17,9 +17,28 @@
   --font-heading: "Marcellus", Georgia, serif;
   --font-body: "Karla", Arial, sans-serif;
 
+  /* Layout & Grid Math Tokens (do theme.manifest.js) */
   --container-max-width: 1620px;
   --container-gutter: 24px;
+  --grid-cols: 12;
+  --grid-col-gap: 24px;
   --radius-sm: 2px;
+}
+
+@media (max-width: 992px) {
+  :root {
+    --container-gutter: 20px;
+    --grid-cols: 8;
+    --grid-col-gap: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --container-gutter: 16px;
+    --grid-cols: 4;
+    --grid-col-gap: 12px;
+  }
 }
 
 /* 1. Azul Royal & Dourado Muted (Foto Principal do Hero) */
@@ -631,7 +650,7 @@ a {
   position: relative;
   background:
     linear-gradient(90deg, var(--color-overlay-start), var(--color-overlay-end)),
-    url("hero-bg.jpg") center / cover no-repeat fixed,
+    url("assets/hero-bg.jpg") center / cover no-repeat fixed,
     var(--color-navy);
   padding-top: 110px;
   padding-bottom: 40px;
@@ -884,7 +903,7 @@ a {
   position: relative;
   background:
     linear-gradient(90deg, var(--color-overlay-start), var(--color-overlay-end)),
-    url("about-bg.jpg") center / cover no-repeat fixed,
+    url("assets/about-bg.jpg") center / cover no-repeat fixed,
     var(--color-navy);
   color: var(--color-white);
   padding: 100px 0;
@@ -1048,7 +1067,7 @@ a {
   position: relative;
   background:
     linear-gradient(90deg, var(--color-overlay-start), var(--color-overlay-end)),
-    url("faq-bg.jpg") center / cover no-repeat fixed,
+    url("assets/faq-bg.jpg") center / cover no-repeat fixed,
     var(--color-navy);
   padding: 100px 0;
   color: var(--color-white);

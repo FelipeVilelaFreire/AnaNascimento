@@ -21,6 +21,10 @@
 
   <!-- External Styles -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="src/foundation/ui/button.css">
+
+  <!-- ServiceOS Foundation UI Primitives -->
+  <script defer src="src/foundation/ui/button.js"></script>
 </head>
 <body>
 
@@ -28,30 +32,24 @@
   <header class="site-header">
     <div class="container header-container">
       <a href="#" class="brand-logo">
-        <img src="ana-logo-dark.png" alt="Ana Nascimento Advocacia">
+        <img src="assets/ana-logo-dark.png" alt="Ana Nascimento Advocacia">
       </a>
       <nav class="desktop-nav">
-        <a href="#inicio">Início</a>
-        <a href="#area">Áreas de Atuação</a>
-        <a href="#sobre">Sobre Nós</a>
-        <a href="#faq">Perguntas Frequentes</a>
-        <a href="#contato">Contato</a>
+        <ui-button appearance="transparent" size="sm" key="header.nav.inicio" href="#inicio"></ui-button>
+        <ui-button appearance="transparent" size="sm" key="header.nav.area" href="#area"></ui-button>
+        <ui-button appearance="transparent" size="sm" key="header.nav.sobre" href="#sobre"></ui-button>
+        <ui-button appearance="transparent" size="sm" key="header.nav.faq" href="#faq"></ui-button>
+        <ui-button appearance="transparent" size="sm" key="header.nav.contato" href="#contato"></ui-button>
       </nav>
       <div class="header-email">
         <div class="header-email-text">
           <i data-lucide="mail"></i>
           <span>ana@ananascimento.adv.br</span>
         </div>
-        <button class="btn-theme-toggle" id="theme-modal-btn">
-          <i data-lucide="palette"></i>
-          <span>Mudar Cor</span>
-        </button>
+        <ui-button size="xs" appearance="glass" key="header.themeButtonText" icon="palette" id="theme-modal-btn"></ui-button>
       </div>
       <div class="header-right-mobile">
-        <button class="btn-theme-toggle mobile-theme-btn" id="theme-modal-header-mobile-btn" aria-label="Mudar Cor">
-          <i data-lucide="palette"></i>
-          <span>Cor</span>
-        </button>
+        <ui-button size="2xs" appearance="glass" key="header.mobileThemeButtonText" icon="palette" id="theme-modal-header-mobile-btn" aria-label="Mudar Cor"></ui-button>
         <button class="mobile-hamburger" id="hamburger-btn" aria-label="Abrir Menu">
           <i data-lucide="menu"></i>
         </button>
@@ -321,22 +319,16 @@
         <i data-lucide="x"></i>
       </button>
     </div>
-    <nav class="drawer-nav">
-      <a href="#inicio" class="drawer-link">Início</a>
-      <a href="#area" class="drawer-link">Áreas de Atuação</a>
-      <a href="#sobre" class="drawer-link">Sobre Nós</a>
-      <a href="#faq" class="drawer-link">Perguntas Frequentes</a>
-      <a href="#contato" class="drawer-link">Contato</a>
+    <nav class="drawer-nav" style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px 0;">
+      <ui-button appearance="transparent" size="md" key="header.nav.inicio" href="#inicio" class="drawer-link"></ui-button>
+      <ui-button appearance="transparent" size="md" key="header.nav.area" href="#area" class="drawer-link"></ui-button>
+      <ui-button appearance="transparent" size="md" key="header.nav.sobre" href="#sobre" class="drawer-link"></ui-button>
+      <ui-button appearance="transparent" size="md" key="header.nav.faq" href="#faq" class="drawer-link"></ui-button>
+      <ui-button appearance="transparent" size="md" key="header.nav.contato" href="#contato" class="drawer-link"></ui-button>
     </nav>
     <div class="drawer-footer">
-      <button class="btn-theme-toggle" id="theme-modal-mobile-btn" style="width: 100%; margin-bottom: 12px; justify-content: center; padding: 10px;">
-        <i data-lucide="palette"></i>
-        <span>Trocar Paleta de Cores</span>
-      </button>
-      <a href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0" target="_blank" class="btn-gold">
-        <i data-lucide="arrow-up-right"></i>
-        <span>FALE COM ADVOGADA</span>
-      </a>
+      <ui-button size="sm" appearance="glass" key="drawer.themeButtonText" icon="palette" id="theme-modal-mobile-btn" style="width: 100%; margin-bottom: 12px; justify-content: center;"></ui-button>
+      <ui-button size="2xl" appearance="solid" key="drawer.cta" icon="arrow-up-right" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
     </div>
   </aside>
 
@@ -350,13 +342,10 @@
         <p class="hero-description">
           Fundado pela Dra. Ana Nascimento, membra da Comissão de Direito do Trabalho e da Comissão de Justiça do Trabalho da OAB/RJ, o escritório soma mais de 10 anos de experiência em Direito do Trabalho, Civil, Família/Patrimonial, Imobiliário e do Consumidor.
         </p>
-        <a href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0" target="_blank" class="btn-gold">
-          <i data-lucide="arrow-up-right"></i>
-          <span>FALE COM ADVOGADA</span>
-        </a>
+        <ui-button size="2xl" appearance="solid" key="hero.cta" icon="arrow-up-right" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
       </div>
       <div class="hero-right">
-        <img src="ana-hero.png" alt="Dra. Ana Nascimento" class="hero-person-img">
+        <img src="assets/ana-hero.png" alt="Dra. Ana Nascimento" class="hero-person-img">
         <a href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0" target="_blank" class="hero-phone-box">
           <div class="hero-phone-icon">
             <i data-lucide="phone-call"></i>
@@ -393,7 +382,7 @@
             <li>Horas extras e jornada de trabalho, com vasta expertise no setor bancário</li>
             <li>Verbas rescisórias, vínculo empregatício e desvio/acúmulo de função</li>
           </ul>
-          <a href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0" target="_blank" class="btn-card">SAIBA MAIS</a>
+          <ui-button size="sm" tone="surface" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
         </div>
 
         <!-- 2. Civil -->
@@ -407,7 +396,7 @@
             <li>Tutela, curatela e interdição</li>
             <li>Responsabilidade civil por danos digitais</li>
           </ul>
-          <a href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0" target="_blank" class="btn-card">SAIBA MAIS</a>
+          <ui-button size="sm" tone="surface" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
         </div>
 
         <!-- 3. Imobiliário -->
@@ -421,7 +410,7 @@
             <li>Locação residencial e comercial</li>
             <li>Soluções extrajudiciais para conflitos imobiliários</li>
           </ul>
-          <a href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0" target="_blank" class="btn-card">SAIBA MAIS</a>
+          <ui-button size="sm" tone="surface" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
         </div>
 
         <!-- 4. Patrimonial -->
@@ -435,7 +424,7 @@
             <li>Pactos antenupcial</li>
             <li>Planejamento patrimonial preventivo</li>
           </ul>
-          <a href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0" target="_blank" class="btn-card">SAIBA MAIS</a>
+          <ui-button size="sm" tone="surface" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
         </div>
 
         <!-- 5. Família -->
@@ -449,7 +438,7 @@
             <li>Guarda e regulamentação de visitas</li>
             <li>Pensão e revisão de alimentos</li>
           </ul>
-          <a href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0" target="_blank" class="btn-card">SAIBA MAIS</a>
+          <ui-button size="sm" tone="surface" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
         </div>
 
         <!-- 6. Consumidor -->
@@ -463,7 +452,7 @@
             <li>Planos de saúde, negativa, reajustes ou cancelamento abusivos</li>
             <li>Produtos e serviços defeituosos</li>
           </ul>
-          <a href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0" target="_blank" class="btn-card">SAIBA MAIS</a>
+          <ui-button size="sm" tone="surface" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
         </div>
       </div>
     </div>
@@ -473,7 +462,7 @@
   <section class="about-section" id="sobre">
     <div class="container about-container reveal">
       <div class="about-left">
-        <img src="ana-profile.jpg" alt="Dra. Ana Nascimento" class="about-img">
+        <img src="assets/ana-profile.jpg" alt="Dra. Ana Nascimento" class="about-img">
       </div>
       <div class="about-right">
         <h2 class="about-title">Dra. Ana Nascimento</h2>
@@ -483,9 +472,7 @@
           <p>Seja diante de uma rescisão de trabalho injusta, de um divórcio doloroso ou da luta por reconhecimento de direitos, estou aqui para seguirmos juntos com empatia, estratégia e segurança jurídica.</p>
           <p>Com mais de 10 anos de experiência na área jurídica, construí uma abordagem técnica e estratégica para conduzir casos complexos, assegurando soluções assertivas, humanizadas e alinhadas aos reais interesses dos meus clientes.</p>
         </div>
-        <a href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0" target="_blank" class="btn-gold">
-          FALE COM ADVOGADA
-        </a>
+        <ui-button size="2xl" tone="primary" key="hero.cta" icon="arrow-up-right" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
       </div>
     </div>
   </section>
@@ -534,9 +521,7 @@
           Estamos localizados na <strong>Barra da Tijuca</strong> para atendimento presencial e <strong>online para todo o Brasil</strong>.
         </p>
 
-        <a href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0" target="_blank" class="btn-gold">
-          FALE COM ADVOGADA
-        </a>
+        <ui-button size="2xl" appearance="solid" key="process.cta" icon="arrow-up-right" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
       </div>
       <div class="process-right">
         <img src="https://ananascimento.adv.br/wp-content/uploads/2025/08/ANA-17-1.jpg" alt="Escritório Ana Nascimento" class="process-img">
@@ -652,9 +637,7 @@
           </div>
         </div>
 
-        <a href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0" target="_blank" class="btn-gold">
-          FALE PELO WHATSAPP
-        </a>
+        <ui-button size="2xl" appearance="solid" key="contact.ctaWhatsApp" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
       </div>
 
       <div class="contact-right">
@@ -676,7 +659,7 @@
   <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-col brand-col">
-        <img src="ana-logo-dark.png" alt="Ana Nascimento Advocacia" class="footer-logo">
+        <img src="assets/ana-logo-dark.png" alt="Ana Nascimento Advocacia" class="footer-logo">
         <div class="footer-socials">
           <a href="https://www.instagram.com/ananascimentoadvocacia/" target="_blank" aria-label="Instagram">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
@@ -691,23 +674,23 @@
       </div>
 
       <div class="footer-col links-col">
-        <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#area">Áreas de Atuação</a></li>
-          <li><a href="#sobre">Sobre Nós</a></li>
-          <li><a href="#faq">Perguntas Frequentes</a></li>
-          <li><a href="#contato">Contato</a></li>
+        <ul style="display: flex; flex-direction: column; gap: 8px;">
+          <li><ui-button appearance="transparent" size="sm" key="header.nav.inicio" href="#inicio"></ui-button></li>
+          <li><ui-button appearance="transparent" size="sm" key="header.nav.area" href="#area"></ui-button></li>
+          <li><ui-button appearance="transparent" size="sm" key="header.nav.sobre" href="#sobre"></ui-button></li>
+          <li><ui-button appearance="transparent" size="sm" key="header.nav.faq" href="#faq"></ui-button></li>
+          <li><ui-button appearance="transparent" size="sm" key="header.nav.contato" href="#contato"></ui-button></li>
         </ul>
       </div>
 
       <div class="footer-col areas-col">
-        <ul>
-          <li><a href="#trabalho">Direito do Trabalho</a></li>
-          <li><a href="#civil">Direito Civil</a></li>
-          <li><a href="#consumidor">Direito do Consumidor</a></li>
-          <li><a href="#familia">Direito de Família</a></li>
-          <li><a href="#imobiliario">Direito Imobiliário</a></li>
-          <li><a href="#patrimonial">Direito Patrimonial</a></li>
+        <ul style="display: flex; flex-direction: column; gap: 8px;">
+          <li><ui-button appearance="transparent" size="sm" key="footer.areas.trabalho" href="#trabalho"></ui-button></li>
+          <li><ui-button appearance="transparent" size="sm" key="footer.areas.civil" href="#civil"></ui-button></li>
+          <li><ui-button appearance="transparent" size="sm" key="footer.areas.consumidor" href="#consumidor"></ui-button></li>
+          <li><ui-button appearance="transparent" size="sm" key="footer.areas.familia" href="#familia"></ui-button></li>
+          <li><ui-button appearance="transparent" size="sm" key="footer.areas.imobiliario" href="#imobiliario"></ui-button></li>
+          <li><ui-button appearance="transparent" size="sm" key="footer.areas.patrimonial" href="#patrimonial"></ui-button></li>
         </ul>
       </div>
     </div>
