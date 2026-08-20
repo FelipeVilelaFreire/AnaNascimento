@@ -1,0 +1,9 @@
+﻿/* Semi-Composed Surface: Glass (2XS -> 3XL) */
+[data-recipe-surface-glass="2xs"] { background-color: rgba(255, 255, 255, 0.06); color: var(--color-gold); border: 1px solid var(--color-border-light); backdrop-filter: blur(2px); }
+[data-recipe-surface-glass="xs"]  { background-color: rgba(255, 255, 255, 0.08); color: var(--color-gold); border: 1px solid var(--color-border-light); backdrop-filter: blur(3px); }
+[data-recipe-surface-glass="sm"]  { background-color: rgba(255, 255, 255, 0.10); color: var(--color-gold); border: 1px solid var(--color-border-light); backdrop-filter: blur(4px); }
+[data-recipe-surface-glass="md"]  { background-color: rgba(255, 255, 255, 0.12); color: var(--color-gold); border: 1px solid var(--color-border-light); backdrop-filter: blur(6px); }
+[data-recipe-surface-glass="lg"]  { background-color: rgba(255, 255, 255, 0.15); color: var(--color-gold); border: 1px solid var(--color-border-light); backdrop-filter: blur(8px); }
+[data-recipe-surface-glass="xl"]  { background-color: rgba(255, 255, 255, 0.18); color: var(--color-gold); border: 1px solid var(--color-border-light); backdrop-filter: blur(12px); }
+[data-recipe-surface-glass="2xl"] { background-color: rgba(255, 255, 255, 0.22); color: var(--color-gold); border: 1px solid var(--color-border-light); backdrop-filter: blur(16px); }
+[data-recipe-surface-glass="3xl"] { background-color: rgba(255, 255, 255, 0.25); color: var(--color-gold); border: 1px solid var(--color-border-light); backdrop-filter: blur(24px); }

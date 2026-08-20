@@ -1,0 +1,13 @@
+﻿/* Semi-Composed Background: Hero Background (2XS -> 3XL) */
+[data-recipe-bg="hero"] {
+  position: relative;
+  background:
+    linear-gradient(90deg, var(--color-overlay-start), var(--color-overlay-end)),
+    url("assets/hero-bg.jpg") center / cover no-repeat fixed,
+    var(--color-navy);
+}
+
+[data-recipe-bg="white"] { background-color: var(--color-white); }
+[data-recipe-bg="navy"]  { background-color: var(--color-navy); }
+[data-recipe-bg="about"] { background: linear-gradient(90deg, var(--color-overlay-start), var(--color-overlay-end)), url("assets/about-bg.jpg") center / cover no-repeat fixed, var(--color-navy); }
+[data-recipe-bg="faq"]   { background: linear-gradient(90deg, var(--color-overlay-start), var(--color-overlay-end)), url("assets/faq-bg.jpg") center / cover no-repeat fixed, var(--color-navy); }

@@ -1,0 +1,9 @@
+﻿/* Semi-Composed Surface: Outline (2XS -> 3XL) */
+[data-recipe-surface-outline="2xs"] { background-color: transparent; color: var(--color-white); border: 1px solid rgba(255, 255, 255, 0.2); }
+[data-recipe-surface-outline="xs"]  { background-color: transparent; color: var(--color-white); border: 1px solid rgba(255, 255, 255, 0.3); }
+[data-recipe-surface-outline="sm"]  { background-color: transparent; color: var(--color-white); border: 1px solid rgba(255, 255, 255, 0.4); }
+[data-recipe-surface-outline="md"]  { background-color: transparent; color: var(--color-white); border: 1px solid rgba(255, 255, 255, 0.5); }
+[data-recipe-surface-outline="lg"]  { background-color: transparent; color: var(--color-white); border: 1px solid rgba(255, 255, 255, 0.6); }
+[data-recipe-surface-outline="xl"]  { background-color: transparent; color: var(--color-white); border: 1.5px solid rgba(255, 255, 255, 0.7); }
+[data-recipe-surface-outline="2xl"] { background-color: transparent; color: var(--color-white); border: 1.5px solid rgba(255, 255, 255, 0.85); }
+[data-recipe-surface-outline="3xl"] { background-color: transparent; color: var(--color-white); border: 2px solid rgba(255, 255, 255, 1); }

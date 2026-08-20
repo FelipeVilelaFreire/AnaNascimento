@@ -1,0 +1,10 @@
+﻿/* Semi-Composed Ambient: Glow Effects (2XS -> 3XL) */
+[data-recipe-ambient="glow-2xs"] { filter: drop-shadow(0 0 2px var(--color-gold)); }
+[data-recipe-ambient="glow-xs"]  { filter: drop-shadow(0 0 4px var(--color-gold)); }
+[data-recipe-ambient="glow-sm"]  { filter: drop-shadow(0 0 6px var(--color-gold)); }
+[data-recipe-ambient="glow-md"]  { filter: drop-shadow(0 0 10px var(--color-gold)); }
+[data-recipe-ambient="glow-lg"]  { filter: drop-shadow(0 0 14px var(--color-gold)); }
+[data-recipe-ambient="glow-xl"]  { filter: drop-shadow(0 0 18px var(--color-gold)); }
+[data-recipe-ambient="glow-2xl"] { filter: drop-shadow(0 0 24px var(--color-gold)); }
+[data-recipe-ambient="glow-3xl"] { filter: drop-shadow(0 0 32px var(--color-gold)); }
+[data-recipe-ambient="goldGlow"] { filter: drop-shadow(0 0 10px var(--color-gold)); }

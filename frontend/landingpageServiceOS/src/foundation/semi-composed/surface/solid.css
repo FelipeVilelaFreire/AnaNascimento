@@ -1,0 +1,9 @@
+﻿/* Semi-Composed Surface: Solid (2XS -> 3XL) */
+[data-recipe-surface-solid="2xs"] { background-color: var(--color-gold); color: var(--color-navy); border: none; padding: 4px 8px; border-radius: var(--radius-2xs); }
+[data-recipe-surface-solid="xs"]  { background-color: var(--color-gold); color: var(--color-navy); border: none; padding: 6px 12px; border-radius: var(--radius-2xs); }
+[data-recipe-surface-solid="sm"]  { background-color: var(--color-gold); color: var(--color-navy); border: none; padding: 8px 16px; border-radius: var(--radius-sm); }
+[data-recipe-surface-solid="md"]  { background-color: var(--color-gold); color: var(--color-navy); border: none; padding: 12px 20px; border-radius: var(--radius-sm); }
+[data-recipe-surface-solid="lg"]  { background-color: var(--color-gold); color: var(--color-navy); border: none; padding: 16px 24px; border-radius: var(--radius-sm); }
+[data-recipe-surface-solid="xl"]  { background-color: var(--color-gold); color: var(--color-navy); border: none; padding: 20px 32px; border-radius: var(--radius-md); }
+[data-recipe-surface-solid="2xl"] { background-color: var(--color-gold); color: var(--color-navy); border: none; padding: 24px 40px; border-radius: var(--radius-md); }
+[data-recipe-surface-solid="3xl"] { background-color: var(--color-gold); color: var(--color-navy); border: none; padding: 32px 48px; border-radius: var(--radius-lg); }

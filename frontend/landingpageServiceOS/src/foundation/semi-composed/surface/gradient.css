@@ -1,0 +1,9 @@
+﻿/* Semi-Composed Surface: Gradient (2XS -> 3XL) */
+[data-recipe-surface-gradient="2xs"] { background: linear-gradient(90deg, var(--color-navy), var(--color-gold)); color: var(--color-white); }
+[data-recipe-surface-gradient="xs"]  { background: linear-gradient(90deg, var(--color-navy), var(--color-gold)); color: var(--color-white); }
+[data-recipe-surface-gradient="sm"]  { background: linear-gradient(90deg, var(--color-navy), var(--color-gold)); color: var(--color-white); }
+[data-recipe-surface-gradient="md"]  { background: linear-gradient(90deg, var(--color-navy), var(--color-gold)); color: var(--color-white); }
+[data-recipe-surface-gradient="lg"]  { background: linear-gradient(90deg, var(--color-navy), var(--color-gold)); color: var(--color-white); }
+[data-recipe-surface-gradient="xl"]  { background: linear-gradient(90deg, var(--color-navy), var(--color-gold)); color: var(--color-white); }
+[data-recipe-surface-gradient="2xl"] { background: linear-gradient(90deg, var(--color-navy), var(--color-gold)); color: var(--color-white); }
+[data-recipe-surface-gradient="3xl"] { background: linear-gradient(90deg, var(--color-navy), var(--color-gold)); color: var(--color-white); }
