@@ -1,15 +1,89 @@
-﻿/* 1. Receita Tipográfica Semi-Composed: Text (2XS -> 3XL) */
-:root {
-  --recipe-text-2xs: var(--font-body);
-  --recipe-text-xs: var(--font-body);
-  --recipe-text-sm: var(--font-body);
-  --recipe-text-md: var(--font-body);
-  --recipe-text-lg: var(--font-heading);
-  --recipe-text-xl: var(--font-heading);
-  --recipe-text-2xl: var(--font-heading);
-  --recipe-text-3xl: var(--font-heading);
+﻿/* ==========================================================================
+   1. RECEITA SEMI-COMPOSED: TEXT (ESCALA PURA 2XS -> 3XL DO MANIFEST)
+   ========================================================================== */
+
+/* Escala Pura 2XS -> 3XL de Textos */
+[data-recipe-text="2xs"] {
+  font-family: var(--font-body);
+  font-size: var(--typography-sizes-3xs, 11px);
+  line-height: var(--typography-lineHeight-dense, 1.3);
+  letter-spacing: var(--typography-letterSpacing-normal, 0);
 }
 
-[data-recipe-text="heroEyebrow"] { fontFamily: var(--font-heading); font-size: var(--typography-sizes-3xl); color: var(--color-gold); }
-[data-recipe-text="heroTitle"] { fontFamily: var(--font-heading); font-size: var(--typography-sizes-4xl); color: var(--color-white); line-height: 1.15; }
-[data-recipe-text="sectionTitle"] { fontFamily: var(--font-heading); font-size: var(--typography-sizes-2xl); color: var(--color-navy); }
+[data-recipe-text="xs"] {
+  font-family: var(--font-body);
+  font-size: var(--typography-sizes-2xs, 12.5px);
+  line-height: var(--typography-lineHeight-normal, 1.5);
+  letter-spacing: var(--typography-letterSpacing-normal, 0);
+}
+
+[data-recipe-text="sm"] {
+  font-family: var(--font-body);
+  font-size: var(--typography-sizes-xs, 13.5px);
+  line-height: var(--typography-lineHeight-normal, 1.5);
+  letter-spacing: var(--typography-letterSpacing-normal, 0);
+}
+
+[data-recipe-text="md"] {
+  font-family: var(--font-body);
+  font-size: var(--typography-sizes-sm, 15px);
+  line-height: var(--typography-lineHeight-normal, 1.6);
+  letter-spacing: var(--typography-letterSpacing-normal, 0);
+}
+
+[data-recipe-text="lg"] {
+  font-family: var(--font-body);
+  font-size: var(--typography-sizes-md, 16px);
+  line-height: var(--typography-lineHeight-relaxed, 1.75);
+  letter-spacing: var(--typography-letterSpacing-normal, 0);
+}
+
+[data-recipe-text="xl"] {
+  font-family: var(--font-heading);
+  font-size: var(--typography-sizes-lg, 20px);
+  line-height: var(--typography-lineHeight-snug, 1.25);
+  letter-spacing: var(--typography-letterSpacing-wide, 0.02em);
+}
+
+[data-recipe-text="2xl"] {
+  font-family: var(--font-heading);
+  font-size: var(--typography-sizes-xl, 26px);
+  line-height: var(--typography-lineHeight-snug, 1.2);
+  letter-spacing: var(--typography-letterSpacing-wide, 0.02em);
+}
+
+[data-recipe-text="3xl"] {
+  font-family: var(--font-heading);
+  font-size: var(--typography-sizes-2xl, 36px);
+  line-height: var(--typography-lineHeight-tight, 1.15);
+  letter-spacing: var(--typography-letterSpacing-tight, -0.01em);
+}
+
+/* Receitas Semânticas de Domínio (Hero, Seções, Cards) */
+[data-recipe-text="heroEyebrow"] {
+  font-family: var(--font-heading);
+  font-size: var(--typography-sizes-3xl, 40px);
+  color: var(--color-gold);
+  line-height: 1.15;
+}
+
+[data-recipe-text="heroTitle"] {
+  font-family: var(--font-heading);
+  font-size: var(--typography-sizes-4xl, 46px);
+  color: var(--color-white);
+  line-height: 1.15;
+}
+
+[data-recipe-text="sectionTitle"] {
+  font-family: var(--font-heading);
+  font-size: var(--typography-sizes-2xl, 36px);
+  color: var(--color-navy);
+  line-height: 1.2;
+}
+
+[data-recipe-text="cardTitle"] {
+  font-family: var(--font-heading);
+  font-size: var(--typography-sizes-xl, 26px);
+  color: var(--color-white);
+  line-height: 1.25;
+}

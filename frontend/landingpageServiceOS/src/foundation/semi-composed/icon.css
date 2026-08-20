@@ -1,3 +1,36 @@
-﻿/* 2. Receita de Ícones Semi-Composed: Icon (2XS -> 3XL) */
-[data-recipe-icon="phoneBadge"] { width: 38px; height: 38px; border-radius: var(--radius-full); border: 1.5px solid var(--color-gold); color: var(--color-gold); }
-[data-recipe-icon="headerMail"] { width: 18px; height: 18px; color: var(--color-gold); }
+﻿/* ==========================================================================
+   2. RECEITA SEMI-COMPOSED: ICON (ESCALA PURA 2XS -> 3XL DO MANIFEST)
+   ========================================================================== */
+
+[data-recipe-icon="2xs"] { width: 14px; height: 14px; }
+[data-recipe-icon="xs"]  { width: 16px; height: 16px; }
+[data-recipe-icon="sm"]  { width: 18px; height: 18px; }
+[data-recipe-icon="md"]  { width: 20px; height: 20px; }
+[data-recipe-icon="lg"]  { width: 24px; height: 24px; }
+[data-recipe-icon="xl"]  { width: 32px; height: 32px; }
+[data-recipe-icon="2xl"] { width: 44px; height: 44px; }
+[data-recipe-icon="3xl"] { width: 56px; height: 56px; }
+
+/* Receitas Semânticas de Domínio */
+[data-recipe-icon="phoneBadge"] {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full, 9999px);
+  border: 1.5px solid var(--color-gold);
+  color: var(--color-gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-recipe-icon="headerMail"] {
+  width: 18px;
+  height: 18px;
+  color: var(--color-gold);
+}
+
+[data-recipe-icon="cardArea"] {
+  width: 44px;
+  height: 44px;
+  color: var(--color-white);
+}

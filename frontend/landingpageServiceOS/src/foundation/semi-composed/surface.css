@@ -1,4 +1,40 @@
-﻿/* 3. Receita de Superfície Semi-Composed: Surface (2XS -> 3XL) */
-[data-recipe-surface="solid"] { background-color: var(--color-gold); color: var(--color-navy); border: none; }
-[data-recipe-surface="glass"] { background-color: rgba(255, 255, 255, 0.12); color: var(--color-gold); border: 1px solid var(--color-border-light); backdrop-filter: blur(4px); }
-[data-recipe-surface="transparent"] { background-color: transparent; color: var(--color-white); border: none; }
+﻿/* ==========================================================================
+   3. RECEITA SEMI-COMPOSED: SURFACE (ESCALA PURA 2XS -> 3XL DO MANIFEST)
+   ========================================================================== */
+
+[data-recipe-surface="2xs"] { border-radius: var(--radius-2xs, 2px); padding: 4px 8px; }
+[data-recipe-surface="xs"]  { border-radius: var(--radius-2xs, 2px); padding: 6px 12px; }
+[data-recipe-surface="sm"]  { border-radius: var(--radius-sm, 4px);  padding: 8px 16px; }
+[data-recipe-surface="md"]  { border-radius: var(--radius-sm, 4px);  padding: 12px 20px; }
+[data-recipe-surface="lg"]  { border-radius: var(--radius-sm, 4px);  padding: 16px 24px; }
+[data-recipe-surface="xl"]  { border-radius: var(--radius-md, 6px);  padding: 20px 32px; }
+[data-recipe-surface="2xl"] { border-radius: var(--radius-md, 6px);  padding: 24px 40px; }
+[data-recipe-surface="3xl"] { border-radius: var(--radius-lg, 12px); padding: 32px 48px; }
+
+/* Receitas Semânticas de Superfície */
+[data-recipe-surface="solid"] {
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+  border: none;
+}
+
+[data-recipe-surface="glass"] {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-gold);
+  border: 1px solid var(--color-border-light);
+  backdrop-filter: blur(4px);
+}
+
+[data-recipe-surface="transparent"] {
+  background-color: transparent;
+  color: var(--color-white);
+  border: none;
+}
+
+[data-recipe-surface="serviceCard"] {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  padding: 36px 28px;
+  border-radius: var(--radius-sm);
+  min-height: 480px;
+}
