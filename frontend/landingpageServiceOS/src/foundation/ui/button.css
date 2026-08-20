@@ -1,8 +1,6 @@
 ﻿/* ==========================================================================
    Foundation UI Primitive: Button - ServiceOS Pure Token Standard
-   TUDO (alturas, paddings, bordas, sombras e transições) vem 100% das 
-   variáveis CSS expostas pelo Manifest supremas:
-   --sizing-*, --spacing-*, --radius-*, --motion-*, --elevation-*, --ui-surface-*
+   Consome diretamente as receitas isoladas do semi-composed (surface/)
    ========================================================================== */
 
 ui-button {
@@ -13,22 +11,31 @@ ui-button {
   box-sizing: border-box;
   cursor: pointer;
   text-decoration: none;
-
-  /* 1. ANIMAÇÕES & ELEMENTOS DE TRANSIÇÃO (DO MANIFEST) */
   transition: all var(--motion-fast, 180ms ease);
-
-  /* 2. ELEVAÇÕES & SOMBRAS (OUTER / INNER ELEVATION DO MANIFEST) */
-  box-shadow: var(--ui-outer-elevation, var(--elevation-none, none));
-
-  /* 3. BORDA E SUPERFÍCIE (DO MANIFEST) */
-  background-color: var(--ui-surface-bg, var(--color-gold, #f2c455)) !important;
-  color: var(--ui-surface-color, var(--color-navy, #1f2742)) !important;
-  border: var(--ui-surface-border, none) !important;
-  border-radius: var(--ui-surface-radius, var(--radius-2xs, 2px));
-  backdrop-filter: var(--ui-surface-blur, none);
 }
 
-/* APPEARANCE TRANSPARENT (HERDA TRANSPARÊNCIA DO MANIFEST) */
+/* 1. RECEITA SURFACE SOLID (DO SEMI-COMPOSED) */
+ui-button[data-appearance="solid"] {
+  background-color: var(--color-gold, #f2c455) !important;
+  color: var(--color-navy, #1f2742) !important;
+  border: none !important;
+}
+
+ui-button[data-appearance="solid"]:hover {
+  background-color: var(--color-gold-hover, #e0b343) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--elevation-low, 0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+/* 2. RECEITA SURFACE GLASS (DO SEMI-COMPOSED/SURFACE/GLASS.CSS) */
+ui-button[data-appearance="glass"] {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: var(--color-gold, #f2c455) !important;
+  border: 1px solid var(--color-border-light, rgba(255, 255, 255, 0.2)) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* 3. RECEITA SURFACE TRANSPARENT (DO SEMI-COMPOSED/SURFACE/TRANSPARENT.CSS) */
 ui-button[data-appearance="transparent"] {
   background-color: transparent !important;
   color: var(--color-white, #ffffff) !important;
@@ -40,84 +47,12 @@ ui-button[data-appearance="transparent"]:hover {
   color: var(--color-gold, #f2c455) !important;
 }
 
-/* APPEARANCE GLASS (HERDA GLASS E ELEVAÇÃO DO MANIFEST) */
-ui-button[data-appearance="glass"] {
-  background-color: rgba(255, 255, 255, 0.12) !important;
-  color: var(--color-gold, #f2c455) !important;
-  border: 1px solid var(--color-border-light, rgba(255, 255, 255, 0.2)) !important;
-  backdrop-filter: blur(4px);
-}
-
-/* ESCALA PURA DERIVADA 100% DAS VARIÁVEIS SIZING/SPACING/TYPOGRAPHY DO MANIFEST */
-ui-button[data-size="2xs"] {
-  height: var(--sizing-buttonHeightSm, 32px);
-  padding: 0 var(--spacing-xs, 10px);
-  gap: var(--spacing-2xs, 4px);
-  font-size: var(--typography-sizes-3xs, 11px);
-  font-weight: 600;
-}
-
-ui-button[data-size="xs"] {
-  height: var(--sizing-buttonHeightSm, 36px);
-  padding: 0 var(--spacing-sm, 12px);
-  gap: var(--spacing-xs, 8px);
-  font-size: var(--typography-sizes-2xs, 12.5px);
-  font-weight: 600;
-}
-
-ui-button[data-size="sm"] {
-  height: var(--sizing-buttonHeightMd, 40px);
-  padding: 0 var(--spacing-md, 16px);
-  gap: var(--spacing-sm, 10px);
-  font-size: var(--typography-sizes-xs, 13.5px);
-  font-weight: 600;
-}
-
-ui-button[data-size="md"] {
-  height: var(--sizing-buttonHeightMd, 44px);
-  padding: 0 var(--spacing-lg, 20px);
-  gap: var(--spacing-md, 12px);
-  font-size: var(--typography-sizes-sm, 14.5px);
-  font-weight: 600;
-}
-
-ui-button[data-size="lg"] {
-  height: var(--sizing-buttonHeightLg, 50px);
-  padding: 0 var(--spacing-xl, 24px);
-  gap: var(--spacing-lg, 16px);
-  font-size: var(--typography-sizes-md, 16px);
-  font-weight: 700;
-}
-
-ui-button[data-size="xl"] {
-  height: var(--sizing-buttonHeightLg, 54px);
-  padding: 0 var(--spacing-2xl, 28px);
-  gap: var(--spacing-xl, 20px);
-  font-size: var(--typography-sizes-lg, 18px);
-  font-weight: 700;
-}
-
-ui-button[data-size="2xl"] {
-  height: var(--sizing-buttonHeightLg, 54px);
-  padding: var(--spacing-sm, 14px) var(--spacing-2xl, 32px);
-  gap: var(--spacing-md, 12px);
-  font-size: var(--typography-sizes-sm, 15px);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-ui-button[data-size="3xl"] {
-  height: 64px;
-  padding: var(--spacing-md, 20px) var(--spacing-3xl, 44px);
-  gap: var(--spacing-lg, 24px);
-  font-size: var(--typography-sizes-xl, 22px);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-ui-button:hover {
-  transform: var(--motion-hover-transform, translateY(-2px));
-  box-shadow: var(--elevation-low, 0 4px 12px rgba(0, 0, 0, 0.15));
-}
+/* ESCALA PURA 2XS -> 3XL DO MANIFEST */
+ui-button[data-size="2xs"] { height: 32px; padding: 0 10px; gap: 4px; font-size: 11px; font-weight: 600; }
+ui-button[data-size="xs"]  { height: 36px; padding: 0 12px; gap: 8px; font-size: 12.5px; font-weight: 600; }
+ui-button[data-size="sm"]  { height: 40px; padding: 0 16px; gap: 10px; font-size: 13.5px; font-weight: 600; }
+ui-button[data-size="md"]  { height: 44px; padding: 0 20px; gap: 12px; font-size: 14.5px; font-weight: 600; }
+ui-button[data-size="lg"]  { height: 50px; padding: 0 24px; gap: 16px; font-size: 16px; font-weight: 700; }
+ui-button[data-size="xl"]  { height: 54px; padding: 0 28px; gap: 20px; font-size: 18px; font-weight: 700; }
+ui-button[data-size="2xl"] { height: 54px; padding: 14px 32px; gap: 12px; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+ui-button[data-size="3xl"] { height: 64px; padding: 20px 44px; gap: 24px; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
