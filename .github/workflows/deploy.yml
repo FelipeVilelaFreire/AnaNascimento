@@ -23,7 +23,8 @@ jobs:
         local-dir: ./frontend/landingpagehtml/
         protocol: ftp
         port: 21
-        dangerous-clean-slate: false
+        dangerous-clean-slate: true
+
 
 
 
