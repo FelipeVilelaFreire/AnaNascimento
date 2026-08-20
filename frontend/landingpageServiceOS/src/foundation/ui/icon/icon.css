@@ -1,0 +1,20 @@
+﻿/* ==========================================================================
+   Foundation UI Primitive: Icon - ServiceOS Standard
+   Consome 100% das receitas de ícones do semi-composed (icon.css)
+   ========================================================================== */
+
+ui-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--semicomposed--icon--width, auto);
+  height: var(--semicomposed--icon--height, auto);
+  color: var(--semicomposed--icon--color, inherit);
+}
+
+ui-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: var(--semicomposed--icon--stroke-width, 2px);
+}

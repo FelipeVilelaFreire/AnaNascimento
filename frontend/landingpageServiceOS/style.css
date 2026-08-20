@@ -14,6 +14,18 @@
   --color-overlay-start: rgba(46, 52, 84, 0.93);
   --color-overlay-end: rgba(46, 52, 84, 0.85);
 
+  /* Ponte de Mapeamento de Tokens do Theme Manifest (--theme--*) */
+  --theme--color-navy: #2e3454;
+  --theme--color-gold: #f2c455;
+  --theme--color-gold-hover: #dcb044;
+  --theme--color-white: #ffffff;
+  --theme--font-body: "Karla", Arial, sans-serif;
+  --theme--font-heading: "Marcellus", Georgia, serif;
+  --theme--glass-light: rgba(255, 255, 255, 0.08);
+  --theme--glass-card: rgba(255, 255, 255, 0.12);
+  --theme--borders-light: 1px solid rgba(255, 255, 255, 0.35);
+  --theme--ambient-backdrop-blur: blur(4px);
+
   --font-heading: "Marcellus", Georgia, serif;
   --font-body: "Karla", Arial, sans-serif;
 
@@ -439,11 +451,27 @@ a {
 .header-email {
   display: flex;
   align-items: center;
-  gap: 14px;
-  color: var(--color-gold);
-  font-size: 14.5px;
-  font-weight: 500;
+  gap: 16px;
   justify-self: end;
+}
+
+.lang-selector-select {
+  background: var(--theme--glass-card, rgba(255, 255, 255, 0.12));
+  color: var(--theme--color-gold, #f2c455);
+  border: 1px solid var(--theme--color-border-light, rgba(255, 255, 255, 0.2));
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  backdrop-filter: blur(4px);
+  transition: all 180ms ease;
+}
+
+.lang-selector-select option {
+  background-color: var(--theme--color-navy, #2e3454);
+  color: var(--theme--color-white, #ffffff);
 }
 
 .header-email-text {
@@ -1073,12 +1101,16 @@ a {
   color: var(--color-white);
 }
 
-.light-title h2 {
-  color: var(--color-white) !important;
+.light-title h2,
+.light-title ui-text[recipe="sectionTitle"] {
+  color: var(--theme--color-white, #ffffff) !important;
+  --semicomposed--text--color: var(--theme--color-white, #ffffff) !important;
 }
 
-.light-title p {
-  color: var(--color-gold) !important;
+.light-title p,
+.light-title ui-text[recipe="bodyText"] {
+  color: var(--theme--color-gold, #f2c455) !important;
+  --semicomposed--text--color: var(--theme--color-gold, #f2c455) !important;
 }
 
 .faq-list {

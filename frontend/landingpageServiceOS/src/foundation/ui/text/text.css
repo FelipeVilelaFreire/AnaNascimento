@@ -1,0 +1,23 @@
+﻿/* ==========================================================================
+   Foundation UI Primitive: Text - ServiceOS Standard
+   Consome 100% das receitas tipográficas do semi-composed (text.css)
+   ========================================================================== */
+
+ui-text {
+  display: block;
+  box-sizing: border-box;
+  font-family: var(--semicomposed--text--font-family, var(--theme--font-body, var(--font-body)));
+  font-size: var(--semicomposed--text--font-size, inherit);
+  line-height: var(--semicomposed--text--line-height, inherit);
+  color: var(--semicomposed--text--color, inherit);
+  margin-bottom: var(--theme--spacing-md, 16px);
+}
+
+ui-text[inline="true"] {
+  display: inline !important;
+  margin-bottom: 0 !important;
+}
+
+.about-paragraphs ui-text {
+  margin-bottom: var(--theme--spacing-md, 16px);
+}

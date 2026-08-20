@@ -1,9 +1,11 @@
 ﻿/* Semi-Composed Surface: Solid (2XS -> 3XL) */
-[data-recipe-surface-solid="2xs"] { background-color: var(--theme--color-gold, var(--color-gold)); color: var(--theme--color-navy, var(--color-navy)); border: none; padding: 4px 8px; border-radius: var(--theme--radius-2xs, 2px); }
-[data-recipe-surface-solid="xs"]  { background-color: var(--theme--color-gold, var(--color-gold)); color: var(--theme--color-navy, var(--color-navy)); border: none; padding: 6px 12px; border-radius: var(--theme--radius-2xs, 2px); }
-[data-recipe-surface-solid="sm"]  { background-color: var(--theme--color-gold, var(--color-gold)); color: var(--theme--color-navy, var(--color-navy)); border: none; padding: 8px 16px; border-radius: var(--theme--radius-sm, 4px); }
-[data-recipe-surface-solid="md"]  { background-color: var(--theme--color-gold, var(--color-gold)); color: var(--theme--color-navy, var(--color-navy)); border: none; padding: 12px 20px; border-radius: var(--theme--radius-sm, 4px); }
-[data-recipe-surface-solid="lg"]  { background-color: var(--theme--color-gold, var(--color-gold)); color: var(--theme--color-navy, var(--color-navy)); border: none; padding: 16px 24px; border-radius: var(--theme--radius-sm, 4px); }
-[data-recipe-surface-solid="xl"]  { background-color: var(--theme--color-gold, var(--color-gold)); color: var(--theme--color-navy, var(--color-navy)); border: none; padding: 20px 32px; border-radius: var(--theme--radius-md, 6px); }
-[data-recipe-surface-solid="2xl"] { background-color: var(--theme--color-gold, var(--color-gold)); color: var(--theme--color-navy, var(--color-navy)); border: none; padding: 24px 40px; border-radius: var(--theme--radius-md, 6px); }
-[data-recipe-surface-solid="3xl"] { background-color: var(--theme--color-gold, var(--color-gold)); color: var(--theme--color-navy, var(--color-navy)); border: none; padding: 32px 48px; border-radius: var(--theme--radius-lg, 12px); }
+[data-recipe-surface-solid="2xs"], [data-recipe-surface-solid="xs"], [data-recipe-surface-solid="sm"],
+[data-recipe-surface-solid="md"], [data-recipe-surface-solid="lg"], [data-recipe-surface-solid="xl"],
+[data-recipe-surface-solid="2xl"], [data-recipe-surface-solid="3xl"] {
+  --semicomposed--surface--bg: var(--theme--color-gold);
+  --semicomposed--surface--color: var(--theme--color-navy);
+  --semicomposed--surface--border: none;
+  --semicomposed--surface--blur: none;
+  --semicomposed--surface--hover-bg: var(--theme--color-gold-hover, var(--theme--color-gold));
+  --semicomposed--surface--hover-color: var(--theme--color-navy);
+}

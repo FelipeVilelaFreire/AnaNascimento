@@ -29,7 +29,7 @@
 [data-recipe-text="lg"] {
   font-family: var(--theme--font-body, var(--font-body));
   font-size: var(--theme--typography-sizes-md, 16px);
-  line-height: var(--theme--typography-lineHeight-relaxed, 1.75);
+  line-height: var(--theme--typography-lineHeight-relaxed, 1.8);
 }
 
 [data-recipe-text="xl"] {
@@ -70,6 +70,13 @@
   font-size: var(--theme--typography-sizes-2xl, 36px);
   color: var(--theme--color-navy, var(--color-navy));
   line-height: 1.2;
+}
+
+[data-recipe-text="bodyText"] {
+  font-family: var(--theme--font-body, var(--font-body));
+  font-size: var(--theme--typography-sizes-md, 16px);
+  line-height: var(--theme--typography-lineHeight-relaxed, 1.8);
+  color: var(--semicomposed--text--color, var(--theme--color-navy-dark, #2e3454));
 }
 
 [data-recipe-text="cardTitle"] {

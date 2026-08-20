@@ -22,10 +22,15 @@
   <!-- External Styles -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="src/foundation/semi-composed/index.css">
-  <link rel="stylesheet" href="src/foundation/ui/button.css">
+  <link rel="stylesheet" href="src/foundation/ui/button/button.css">
+  <link rel="stylesheet" href="src/foundation/ui/text/text.css">
+  <link rel="stylesheet" href="src/foundation/ui/icon/icon.css">
 
-  <!-- ServiceOS Foundation UI Primitives -->
-  <script defer src="src/foundation/ui/button.js"></script>
+  <!-- ServiceOS Foundation UI Primitives & Resolver Runtime -->
+  <script defer src="src/resolver/landing.resolver.runtime.js"></script>
+  <script defer src="src/foundation/ui/button/button.js"></script>
+  <script defer src="src/foundation/ui/text/text.js"></script>
+  <script defer src="src/foundation/ui/icon/icon.js"></script>
 </head>
 <body>
 
@@ -47,6 +52,11 @@
           <i data-lucide="mail"></i>
           <span>ana@ananascimento.adv.br</span>
         </div>
+        <select class="lang-selector-select" id="lang-selector-btn" onchange="if(window.LandingResolverRuntime){ window.LandingResolverRuntime.setLocale(this.value); }">
+          <option value="pt-BR" selected>🇧🇷 PT</option>
+          <option value="en-US">🇺🇸 EN</option>
+          <option value="de-DE">🇩🇪 DE</option>
+        </select>
         <ui-button size="xs" appearance="glass" key="header.themeButtonText" icon="palette" id="theme-modal-btn"></ui-button>
       </div>
       <div class="header-right-mobile">
@@ -338,11 +348,9 @@
     <div class="hero-overlay"></div>
     <div class="container hero-container">
       <div class="hero-left">
-        <h3 class="hero-eyebrow">Dra. Ana Nascimento</h3>
-        <h1 class="hero-title">Sua história merece respeito, estratégia e resultado.</h1>
-        <p class="hero-description">
-          Fundado pela Dra. Ana Nascimento, membra da Comissão de Direito do Trabalho e da Comissão de Justiça do Trabalho da OAB/RJ, o escritório soma mais de 10 anos de experiência em Direito do Trabalho, Civil, Família/Patrimonial, Imobiliário e do Consumidor.
-        </p>
+        <ui-text recipe="heroEyebrow" key="hero.eyebrow" class="hero-eyebrow"></ui-text>
+        <ui-text recipe="heroTitle" key="hero.title" class="hero-title"></ui-text>
+        <ui-text recipe="heroDescription" key="hero.description" class="hero-description"></ui-text>
         <ui-button size="2xl" appearance="solid" key="hero.cta" icon="arrow-up-right" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
       </div>
       <div class="hero-right">
@@ -357,17 +365,12 @@
     </div>
   </section>
 
-  <!-- 3. Seção Nosso Diferencial & Áreas de Atuação -->
-  <section class="difference-section" id="area">
+<section class="difference-section" id="area">
     <div class="container">
       <div class="section-title-center reveal">
-        <h2>NOSSO DIFERENCIAL</h2>
-        <p class="difference-lead">
-          Acreditamos que cada cliente traz não apenas uma demanda jurídica, mas também uma história que merece ser ouvida e tratada com seriedade. Por isso, unimos atendimento humanizado e especializado à atuação estratégica, conduzindo cada caso com dedicação e segurança jurídica.
-        </p>
-        <p class="difference-lead">
-          Nosso propósito vai além da defesa de direitos: atuamos também no planejamento preventivo e patrimonial, protegendo famílias, trabalhadores e empresas em decisões que impactam diretamente o presente e o futuro.
-        </p>
+        <ui-text recipe="sectionTitle" key="difference.title"></ui-text>
+        <ui-text recipe="bodyText" key="difference.lead1" class="difference-lead"></ui-text>
+        <ui-text recipe="bodyText" key="difference.lead2" class="difference-lead"></ui-text>
       </div>
 
       <!-- Grid das 6 Áreas -->
@@ -383,7 +386,7 @@
             <li>Horas extras e jornada de trabalho, com vasta expertise no setor bancário</li>
             <li>Verbas rescisórias, vínculo empregatício e desvio/acúmulo de função</li>
           </ul>
-          <ui-button size="sm" tone="surface" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
+          <ui-button size="sm" appearance="soft" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
         </div>
 
         <!-- 2. Civil -->
@@ -397,7 +400,7 @@
             <li>Tutela, curatela e interdição</li>
             <li>Responsabilidade civil por danos digitais</li>
           </ul>
-          <ui-button size="sm" tone="surface" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
+          <ui-button size="sm" appearance="soft" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
         </div>
 
         <!-- 3. Imobiliário -->
@@ -411,7 +414,7 @@
             <li>Locação residencial e comercial</li>
             <li>Soluções extrajudiciais para conflitos imobiliários</li>
           </ul>
-          <ui-button size="sm" tone="surface" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
+          <ui-button size="sm" appearance="soft" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
         </div>
 
         <!-- 4. Patrimonial -->
@@ -425,7 +428,7 @@
             <li>Pactos antenupcial</li>
             <li>Planejamento patrimonial preventivo</li>
           </ul>
-          <ui-button size="sm" tone="surface" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
+          <ui-button size="sm" appearance="soft" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
         </div>
 
         <!-- 5. Família -->
@@ -439,7 +442,7 @@
             <li>Guarda e regulamentação de visitas</li>
             <li>Pensão e revisão de alimentos</li>
           </ul>
-          <ui-button size="sm" tone="surface" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
+          <ui-button size="sm" appearance="soft" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
         </div>
 
         <!-- 6. Consumidor -->
@@ -453,7 +456,7 @@
             <li>Planos de saúde, negativa, reajustes ou cancelamento abusivos</li>
             <li>Produtos e serviços defeituosos</li>
           </ul>
-          <ui-button size="sm" tone="surface" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
+          <ui-button size="sm" appearance="soft" key="cards.saibaMais" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
         </div>
       </div>
     </div>
@@ -466,14 +469,14 @@
         <img src="assets/ana-profile.jpg" alt="Dra. Ana Nascimento" class="about-img">
       </div>
       <div class="about-right">
-        <h2 class="about-title">Dra. Ana Nascimento</h2>
+        <ui-text recipe="sectionTitle" key="about.title" class="about-title" style="--semicomposed--text--color: #ffffff;"></ui-text>
         <div class="about-paragraphs">
-          <p><strong>Advogar com o coração, técnica e propósito.</strong></p>
-          <p>Sou advogada apaixonada pelo direito e por ajudar pessoas em momentos difíceis, oferecendo acolhimento, escuta ativa e soluções jurídicas eficazes.</p>
-          <p>Seja diante de uma rescisão de trabalho injusta, de um divórcio doloroso ou da luta por reconhecimento de direitos, estou aqui para seguirmos juntos com empatia, estratégia e segurança jurídica.</p>
-          <p>Com mais de 10 anos de experiência na área jurídica, construí uma abordagem técnica e estratégica para conduzir casos complexos, assegurando soluções assertivas, humanizadas e alinhadas aos reais interesses dos meus clientes.</p>
+          <ui-text recipe="bodyText" key="about.lead" style="font-weight: 700; margin-bottom: 16px; --semicomposed--text--color: #ffffff;"></ui-text>
+          <ui-text recipe="bodyText" key="about.p1" style="margin-bottom: 16px; --semicomposed--text--color: #ffffff;"></ui-text>
+          <ui-text recipe="bodyText" key="about.p2" style="margin-bottom: 16px; --semicomposed--text--color: #ffffff;"></ui-text>
+          <ui-text recipe="bodyText" key="about.p3" style="margin-bottom: 16px; --semicomposed--text--color: #ffffff;"></ui-text>
         </div>
-        <ui-button size="2xl" tone="primary" key="hero.cta" icon="arrow-up-right" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
+        <ui-button size="2xl" appearance="solid" key="hero.cta" icon="arrow-up-right" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
       </div>
     </div>
   </section>
@@ -482,7 +485,7 @@
   <section class="process-section" id="atendimento">
     <div class="container process-container reveal">
       <div class="process-left">
-        <h2 class="process-title">Como funciona o atendimento?</h2>
+        <ui-text recipe="sectionTitle" key="process.title" class="process-title"></ui-text>
         
         <div class="process-steps">
           <div class="step-item reveal delay-1">
@@ -518,9 +521,7 @@
           </div>
         </div>
 
-        <p class="process-location-note">
-          Estamos localizados na <strong>Barra da Tijuca</strong> para atendimento presencial e <strong>online para todo o Brasil</strong>.
-        </p>
+        <ui-text recipe="bodyText" key="process.locationNote" class="process-location-note"></ui-text>
 
         <ui-button size="2xl" appearance="solid" key="process.cta" icon="arrow-up-right" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
       </div>
@@ -552,8 +553,8 @@
   <section class="faq-section" id="faq">
     <div class="container reveal">
       <div class="section-title-center light-title">
-        <h2>PERGUNTAS FREQUENTES</h2>
-        <p>Tire suas dúvidas de forma simples e rápida.</p>
+        <ui-text recipe="sectionTitle" key="faq.title"></ui-text>
+        <ui-text recipe="bodyText" key="faq.lead"></ui-text>
       </div>
 
       <div class="faq-list">
@@ -609,31 +610,31 @@
   <section class="contact-section" id="contato">
     <div class="container contact-container reveal">
       <div class="contact-left">
-        <h2>ENTRE EM CONTATO</h2>
-        <p class="contact-lead">Estamos prontos para ouvir sua história e defender seus direitos.</p>
+        <ui-text recipe="sectionTitle" key="contact.title" class="contact-title"></ui-text>
+        <ui-text recipe="bodyText" key="contact.lead" class="contact-lead"></ui-text>
         
         <div class="contact-info-list">
           <div class="contact-info-item">
-            <i data-lucide="map-pin"></i>
+            <ui-icon recipe="stepIcon" name="map-pin"></ui-icon>
             <div>
-              <strong>Endereço:</strong>
-              <p>Avenida das Américas, nº 1155, sala 406, Barra Space Center, Barra da Tijuca, Rio de Janeiro/RJ - CEP: 22.631-903</p>
+              <ui-text recipe="bodyText" key="contact.addressLabel" inline="true" style="font-weight: 700; display: block;"></ui-text>
+              <ui-text recipe="bodyText" key="contact.addressText"></ui-text>
             </div>
           </div>
 
           <div class="contact-info-item">
-            <i data-lucide="phone"></i>
+            <ui-icon recipe="stepIcon" name="phone"></ui-icon>
             <div>
-              <strong>Telefone / WhatsApp:</strong>
-              <p>(21) 99656-7447</p>
+              <ui-text recipe="bodyText" key="contact.phoneLabel" inline="true" style="font-weight: 700; display: block;"></ui-text>
+              <ui-text recipe="bodyText" key="contact.phoneText"></ui-text>
             </div>
           </div>
 
           <div class="contact-info-item">
-            <i data-lucide="mail"></i>
+            <ui-icon recipe="stepIcon" name="mail"></ui-icon>
             <div>
-              <strong>E-mail:</strong>
-              <p>ana@ananascimento.adv.br</p>
+              <ui-text recipe="bodyText" key="contact.emailLabel" inline="true" style="font-weight: 700; display: block;"></ui-text>
+              <ui-text recipe="bodyText" key="contact.emailText"></ui-text>
             </div>
           </div>
         </div>

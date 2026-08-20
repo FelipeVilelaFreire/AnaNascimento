@@ -1,0 +1,11 @@
+﻿/* Semi-Composed Surface: Soft (2XS -> 3XL) - Exposta 100% via Variáveis --semicomposed--surface--* */
+[data-recipe-surface-soft="2xs"], [data-recipe-surface-soft="xs"], [data-recipe-surface-soft="sm"],
+[data-recipe-surface-soft="md"], [data-recipe-surface-soft="lg"], [data-recipe-surface-soft="xl"],
+[data-recipe-surface-soft="2xl"], [data-recipe-surface-soft="3xl"] {
+  --semicomposed--surface--bg: var(--theme--glass-light);
+  --semicomposed--surface--color: var(--theme--color-white);
+  --semicomposed--surface--border: var(--theme--borders-light);
+  --semicomposed--surface--blur: var(--theme--ambient-backdrop-blur);
+  --semicomposed--surface--hover-bg: var(--theme--glass-card);
+  --semicomposed--surface--hover-color: var(--theme--color-white);
+}

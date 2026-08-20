@@ -1,9 +1,11 @@
 ﻿/* Semi-Composed Surface: Transparent (2XS -> 3XL) */
-[data-recipe-surface-transparent="2xs"] { background-color: transparent; color: var(--color-white); border: none; }
-[data-recipe-surface-transparent="xs"]  { background-color: transparent; color: var(--color-white); border: none; }
-[data-recipe-surface-transparent="sm"]  { background-color: transparent; color: var(--color-white); border: none; }
-[data-recipe-surface-transparent="md"]  { background-color: transparent; color: var(--color-white); border: none; }
-[data-recipe-surface-transparent="lg"]  { background-color: transparent; color: var(--color-white); border: none; }
-[data-recipe-surface-transparent="xl"]  { background-color: transparent; color: var(--color-white); border: none; }
-[data-recipe-surface-transparent="2xl"] { background-color: transparent; color: var(--color-white); border: none; }
-[data-recipe-surface-transparent="3xl"] { background-color: transparent; color: var(--color-white); border: none; }
+[data-recipe-surface-transparent="2xs"], [data-recipe-surface-transparent="xs"], [data-recipe-surface-transparent="sm"],
+[data-recipe-surface-transparent="md"], [data-recipe-surface-transparent="lg"], [data-recipe-surface-transparent="xl"],
+[data-recipe-surface-transparent="2xl"], [data-recipe-surface-transparent="3xl"] {
+  --semicomposed--surface--bg: transparent;
+  --semicomposed--surface--color: var(--theme--color-white);
+  --semicomposed--surface--border: none;
+  --semicomposed--surface--blur: none;
+  --semicomposed--surface--hover-bg: transparent;
+  --semicomposed--surface--hover-color: var(--theme--color-gold);
+}
