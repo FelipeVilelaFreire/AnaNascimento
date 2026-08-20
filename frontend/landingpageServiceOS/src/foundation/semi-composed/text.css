@@ -1,0 +1,15 @@
+﻿/* 1. Receita Tipográfica Semi-Composed: Text (2XS -> 3XL) */
+:root {
+  --recipe-text-2xs: var(--font-body);
+  --recipe-text-xs: var(--font-body);
+  --recipe-text-sm: var(--font-body);
+  --recipe-text-md: var(--font-body);
+  --recipe-text-lg: var(--font-heading);
+  --recipe-text-xl: var(--font-heading);
+  --recipe-text-2xl: var(--font-heading);
+  --recipe-text-3xl: var(--font-heading);
+}
+
+[data-recipe-text="heroEyebrow"] { fontFamily: var(--font-heading); font-size: var(--typography-sizes-3xl); color: var(--color-gold); }
+[data-recipe-text="heroTitle"] { fontFamily: var(--font-heading); font-size: var(--typography-sizes-4xl); color: var(--color-white); line-height: 1.15; }
+[data-recipe-text="sectionTitle"] { fontFamily: var(--font-heading); font-size: var(--typography-sizes-2xl); color: var(--color-navy); }

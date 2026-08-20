@@ -1,0 +1,2 @@
+﻿/* 6. Receita de Elevação Interna Semi-Composed: Inner Elevation */
+[data-recipe-inner-elevation="insetCard"] { box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06); }

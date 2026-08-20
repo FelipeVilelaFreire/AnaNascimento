@@ -1,0 +1,2 @@
+﻿/* 12. Receita de FocusRing Semi-Composed: FocusRing */
+[data-recipe-focus-ring="outlineFocus"] { outline: 2px solid var(--color-gold); outline-offset: 2px; }

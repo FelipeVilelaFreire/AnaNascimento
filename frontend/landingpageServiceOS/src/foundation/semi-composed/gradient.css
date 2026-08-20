@@ -1,0 +1,2 @@
+﻿/* 10. Receita de Gradientes Semi-Composed: Gradient */
+[data-recipe-gradient="navyToGoldOverlay"] { background: linear-gradient(90deg, var(--color-overlay-start), var(--color-overlay-end)); }

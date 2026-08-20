@@ -1,0 +1,4 @@
+﻿/* 5. Receita de Elevação Externa Semi-Composed: Outer Elevation (2XS -> 3XL) */
+[data-recipe-outer-elevation="phoneBoxShadow"] { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18); }
+[data-recipe-outer-elevation="modalBoxShadow"] { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+[data-recipe-outer-elevation="drawerShadow"] { box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4); }

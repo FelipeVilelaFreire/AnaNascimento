@@ -1,0 +1,3 @@
+﻿/* 2. Receita de Ícones Semi-Composed: Icon (2XS -> 3XL) */
+[data-recipe-icon="phoneBadge"] { width: 38px; height: 38px; border-radius: var(--radius-full); border: 1.5px solid var(--color-gold); color: var(--color-gold); }
+[data-recipe-icon="headerMail"] { width: 18px; height: 18px; color: var(--color-gold); }

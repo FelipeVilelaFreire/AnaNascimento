@@ -1,0 +1,2 @@
+﻿/* 11. Receita de Overlay Semi-Composed: Overlay */
+[data-recipe-overlay="darkOverlay"] { opacity: 0.96; background-color: var(--color-navy); }

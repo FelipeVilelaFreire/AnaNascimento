@@ -1,0 +1,4 @@
+﻿/* 7. Receita de Stroke Semi-Composed: Stroke */
+[data-recipe-stroke="cardBorder"] { border: 1px solid var(--color-border); }
+[data-recipe-stroke="goldBorder"] { border: 1.5px solid var(--color-gold); }
+[data-recipe-stroke="lightBorder"] { border: 1px solid var(--color-border-light); }

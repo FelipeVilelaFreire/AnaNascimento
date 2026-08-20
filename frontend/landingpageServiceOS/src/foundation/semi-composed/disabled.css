@@ -1,0 +1,2 @@
+﻿/* 13. Receita de Desabilitado Semi-Composed: Disabled */
+[data-recipe-disabled="inactiveState"] { opacity: 0.4; cursor: not-allowed; pointer-events: none; }

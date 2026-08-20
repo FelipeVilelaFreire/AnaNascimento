@@ -1,0 +1,2 @@
+﻿/* 19. Receita de Listbox Semi-Composed: Listbox */
+[data-recipe-listbox="faqContainer"] { max-width: 820px; display: flex; flex-direction: column; gap: 16px; }

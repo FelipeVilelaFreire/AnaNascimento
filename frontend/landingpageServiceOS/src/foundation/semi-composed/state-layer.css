@@ -1,0 +1,2 @@
+﻿/* 14. Receita de Camada de Estado Semi-Composed: StateLayer */
+[data-recipe-state-layer="buttonHover"] { transform: translateY(-2px); filter: brightness(1.05); }

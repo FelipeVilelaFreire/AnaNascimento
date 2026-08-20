@@ -1,0 +1,3 @@
+﻿/* 9. Receita de Vidro Semi-Composed: Glass */
+[data-recipe-glass="backdropBlurLight"] { backdrop-filter: blur(4px); }
+[data-recipe-glass="backdropBlurHeavy"] { backdrop-filter: blur(12px); }

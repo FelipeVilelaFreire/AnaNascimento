@@ -1,0 +1,2 @@
+﻿/* 17. Receita de Brilho de Ambiente Semi-Composed: Ambient */
+[data-recipe-ambient="goldGlow"] { filter: drop-shadow(0 0 10px var(--color-gold)); }

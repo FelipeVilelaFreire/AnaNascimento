@@ -1,0 +1,3 @@
+﻿/* 16. Receita de Backgrounds Semi-Composed: Background */
+[data-recipe-background="heroSection"] { position: relative; background-color: var(--color-navy); padding-top: 110px; padding-bottom: 40px; }
+[data-recipe-background="differenceSection"] { background-color: var(--color-white); padding: 100px 0; }
