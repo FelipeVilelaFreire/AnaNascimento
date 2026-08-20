@@ -1,3 +1,12 @@
-﻿/* 8. Receita de Animação Semi-Composed: Motion */
-[data-recipe-motion="revealEntrance"] { transition: opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1), transform 1100ms cubic-bezier(0.22, 1, 0.36, 1); }
-[data-recipe-motion="modalEntrance"] { transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), opacity 250ms ease; }
+﻿/* ==========================================================================
+   Receita Semi-Composed: Motion Standard (2XS -> 3XL)
+   Consome 100% dos tokens do Theme --theme--*
+   ========================================================================== */
+
+[data-recipe-motion="fast"]   { transition: all var(--theme--motion-fast, 180ms ease); }
+[data-recipe-motion="normal"] { transition: all var(--theme--motion-normal, 300ms ease); }
+[data-recipe-motion="slow"]   { transition: all var(--theme--motion-slow, 500ms ease); }
+
+/* Receitas Semânticas de Domínio */
+[data-recipe-motion="revealEntrance"] { transition: opacity var(--theme--motion-slow, 1100ms) cubic-bezier(0.22, 1, 0.36, 1), transform var(--theme--motion-slow, 1100ms) cubic-bezier(0.22, 1, 0.36, 1); }
+[data-recipe-motion="modalEntrance"]  { transition: transform var(--theme--motion-normal, 300ms) cubic-bezier(0.16, 1, 0.3, 1), opacity var(--theme--motion-fast, 250ms) ease; }

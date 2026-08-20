@@ -1,54 +1,64 @@
-﻿/* ==========================================================================
-   Foundation UI Primitive: Button - ServiceOS Native Web Component
-   Injeta a receita de superficie data-recipe-surface-* para que o CSS de
-   Semi-Composed emita as variaveis --semicomposed--surface--* perfeitamente
-   ========================================================================== */
-
+﻿/* Web Component Nativo ui-button com Motor de Direct Token Props (Zero Fricção) */
 function renderAllUiButtons() {
-  var buttons = document.querySelectorAll("ui-button");
-  buttons.forEach(function(btn) {
-    var size = btn.getAttribute("size") || "md";
-    var appearance = btn.getAttribute("appearance") || btn.getAttribute("tone") || "solid";
-    var key = btn.getAttribute("key");
-    var icon = btn.getAttribute("icon");
-    var href = btn.getAttribute("href");
+  var buttonElements = document.querySelectorAll("ui-button");
+  buttonElements.forEach(function(el) {
+    var appearance = el.getAttribute("appearance") || "solid";
+    var size = el.getAttribute("size") || "md";
+    var key = el.getAttribute("key");
+    var iconName = el.getAttribute("icon");
+    var iconPos = el.getAttribute("icon-pos") || "right"; // "left" ou "right" (padrão)
+    var href = el.getAttribute("href");
 
-    btn.setAttribute("data-size", size);
-    btn.setAttribute("data-appearance", appearance);
+    el.setAttribute("data-recipe-surface-" + appearance, size);
+    el.setAttribute("data-size", size);
 
-    // Conecta o atributo data-recipe-surface-* do semi-composed
-    if (appearance === "solid") {
-      btn.setAttribute("data-recipe-surface-solid", size);
-    } else if (appearance === "glass") {
-      btn.setAttribute("data-recipe-surface-glass", size);
-    } else if (appearance === "soft") {
-      btn.setAttribute("data-recipe-surface-soft", size);
-    } else if (appearance === "transparent") {
-      btn.setAttribute("data-recipe-surface-transparent", size);
-    } else if (appearance === "outline") {
-      btn.setAttribute("data-recipe-surface-outline", size);
+    // Motor de Direct Token Props: resolve qualquer token do Theme (color, bg, radius, shadow, border)
+    var color = el.getAttribute("color");
+    var bg = el.getAttribute("bg");
+    var radius = el.getAttribute("radius");
+    var shadow = el.getAttribute("shadow");
+    var border = el.getAttribute("border");
+
+    if (color) {
+      el.style.setProperty("--semicomposed--surface--color", "var(--theme--color-" + color + ", " + color + ")");
+    }
+    if (bg) {
+      el.style.setProperty("--semicomposed--surface--bg", "var(--theme--color-" + bg + ", var(--theme--" + bg + ", " + bg + "))");
+    }
+    if (radius) {
+      el.style.setProperty("--semicomposed--surface--radius", "var(--theme--radius-" + radius + ", " + radius + ")");
+    }
+    if (shadow) {
+      el.style.setProperty("--semicomposed--outer-elevation--button", "var(--theme--elevation-" + shadow + ", " + shadow + ")");
+    }
+    if (border) {
+      el.style.setProperty("--semicomposed--surface--border", "var(--theme--borders-" + border + ", " + border + ")");
     }
 
-    var labelText = key && window.LandingResolverRuntime ? window.LandingResolverRuntime.getStrings(key) : (btn.getAttribute("label") || btn.textContent.trim());
-    var iconHTML = icon ? '<i data-lucide="' + icon + '"></i> ' : '';
+    var labelText = key && window.LandingResolverRuntime ? window.LandingResolverRuntime.getStrings(key) : el.textContent.trim();
 
-    btn.innerHTML = iconHTML + '<span>' + labelText + '</span>';
+    var iconHtml = "";
+    if (iconName) {
+      iconHtml = '<span class="ui-button-icon"><i data-lucide="' + iconName + '"></i></span>';
+    }
+
+    var contentHtml = "";
+    if (iconPos === "left" && iconHtml) {
+      contentHtml = iconHtml + '<span>' + labelText + '</span>';
+    } else {
+      contentHtml = '<span>' + labelText + '</span>' + iconHtml;
+    }
 
     if (href) {
-      btn.style.cursor = "pointer";
-      btn.onclick = function(e) {
-        if (href.startsWith("#")) {
-          var target = document.querySelector(href);
-          if (target) target.scrollIntoView({ behavior: "smooth" });
-        } else {
-          window.open(href, "_blank");
-        }
-      };
+      var targetAttr = href.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : '';
+      el.innerHTML = '<a href="' + href + '" class="ui-button-link"' + targetAttr + '>' + contentHtml + '</a>';
+    } else {
+      el.innerHTML = contentHtml;
     }
   });
 
-  if (window.lucide && window.lucide.createIcons) {
-    window.lucide.createIcons();
+  if (typeof lucide !== "undefined" && lucide.createIcons) {
+    lucide.createIcons();
   }
 }
 

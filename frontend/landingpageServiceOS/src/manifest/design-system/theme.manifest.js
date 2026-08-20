@@ -1,4 +1,4 @@
-﻿import { defaultTokens } from "./tokens.js";
+import { defaultTokens } from "./tokens.js";
 
 export const themeManifest = {
   activeTheme: "default",
@@ -6,11 +6,11 @@ export const themeManifest = {
   layout: {
     desktop: {
       minWidth: "993px",
-      maxWidth: "1620px",
-      cols: 12,
+      maxWidth: "100%",
+      cols: 20,
       colGap: "24px",
-      gutter: "24px",
-      headerCols: { logo: 3, nav: 6, actions: 3 }
+      gutter: "36px",
+      headerCols: { logo: 5, nav: 10, actions: 5 }
     },
     tablet: {
       minWidth: "577px",

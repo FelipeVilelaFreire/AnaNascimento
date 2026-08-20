@@ -1,4 +1,5 @@
-﻿/* Maestro Centralizador dos 20 Módulos CSS de Receita do Semi-Composed */
+﻿/* Maestro Centralizador dos Módulos CSS de Receita do Semi-Composed */
+@import url("layout/index.css");
 @import url("surface/index.css");
 @import url("background/index.css");
 @import url("ambient/index.css");

@@ -21,6 +21,7 @@
 
   <!-- External Styles -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="src/shells/appshell.css">
   <link rel="stylesheet" href="src/foundation/semi-composed/index.css">
   <link rel="stylesheet" href="src/foundation/ui/button/button.css">
   <link rel="stylesheet" href="src/foundation/ui/text/text.css">
@@ -28,29 +29,40 @@
 
   <!-- ServiceOS Foundation UI Primitives & Resolver Runtime -->
   <script defer src="src/resolver/landing.resolver.runtime.js"></script>
+  <script defer src="src/resolver/appshell.navigation.resolver.js"></script>
+  <script defer src="src/shells/appshell.js"></script>
   <script defer src="src/foundation/ui/button/button.js"></script>
   <script defer src="src/foundation/ui/text/text.js"></script>
   <script defer src="src/foundation/ui/icon/icon.js"></script>
 </head>
 <body>
 
-  <!-- 1. Header / Navegação Fixo -->
-  <header class="site-header">
+  <!-- 1. Header / Navegação Fixo em Modo Padrão Acoplado -->
+  <header class="site-header" data-header-layout="attached">
     <div class="container header-container">
-      <a href="#" class="brand-logo">
-        <img src="assets/ana-logo-dark.png" alt="Ana Nascimento Advocacia">
-      </a>
-      <nav class="desktop-nav">
-        <ui-button appearance="transparent" size="sm" key="header.nav.inicio" href="#inicio"></ui-button>
-        <ui-button appearance="transparent" size="sm" key="header.nav.area" href="#area"></ui-button>
-        <ui-button appearance="transparent" size="sm" key="header.nav.sobre" href="#sobre"></ui-button>
-        <ui-button appearance="transparent" size="sm" key="header.nav.faq" href="#faq"></ui-button>
-        <ui-button appearance="transparent" size="sm" key="header.nav.contato" href="#contato"></ui-button>
-      </nav>
-      <div class="header-email">
+      <!-- NÍVEL 1: INÍCIO (Brand Logo Left) -->
+      <div class="header-slot-left">
+        <a href="#" class="brand-logo">
+          <img src="assets/ana-logo-dark.png" alt="Ana Nascimento Advocacia">
+        </a>
+      </div>
+
+      <!-- NÍVEL 2: MEIO (Navegação Centralizada) -->
+      <div class="header-slot-center">
+        <nav class="desktop-nav">
+          <ui-button appearance="transparent" size="sm" key="header.nav.inicio" href="#inicio"></ui-button>
+          <ui-button appearance="transparent" size="sm" key="header.nav.area" href="#area"></ui-button>
+          <ui-button appearance="transparent" size="sm" key="header.nav.sobre" href="#sobre"></ui-button>
+          <ui-button appearance="transparent" size="sm" key="header.nav.faq" href="#faq"></ui-button>
+          <ui-button appearance="transparent" size="sm" key="header.nav.contato" href="#contato"></ui-button>
+        </nav>
+      </div>
+
+      <!-- NÍVEL 3: FIM (Ações & Idioma Right) -->
+      <div class="header-slot-right header-email">
         <div class="header-email-text">
-          <i data-lucide="mail"></i>
-          <span>ana@ananascimento.adv.br</span>
+          <ui-icon name="mail" color="gold"></ui-icon>
+          <ui-text recipe="bodyText" color="gold" key="header.email" inline="true" style="font-size: 14.5px; margin-bottom: 0;"></ui-text>
         </div>
         <select class="lang-selector-select" id="lang-selector-btn" onchange="if(window.LandingResolverRuntime){ window.LandingResolverRuntime.setLocale(this.value); }">
           <option value="pt-BR" selected>🇧🇷 PT</option>
@@ -59,6 +71,7 @@
         </select>
         <ui-button size="xs" appearance="glass" key="header.themeButtonText" icon="palette" id="theme-modal-btn"></ui-button>
       </div>
+
       <div class="header-right-mobile">
         <ui-button size="2xs" appearance="glass" key="header.mobileThemeButtonText" icon="palette" id="theme-modal-header-mobile-btn" aria-label="Mudar Cor"></ui-button>
         <button class="mobile-hamburger" id="hamburger-btn" aria-label="Abrir Menu">
@@ -344,9 +357,9 @@
   </aside>
 
   <!-- 2. Hero Section -->
-  <section class="hero-section" id="inicio">
+  <section class="hero-section" id="inicio" data-recipe-section="hero">
     <div class="hero-overlay"></div>
-    <div class="container hero-container">
+    <div class="container hero-container" data-recipe-grid="hero-18">
       <div class="hero-left">
         <ui-text recipe="heroEyebrow" key="hero.eyebrow" class="hero-eyebrow"></ui-text>
         <ui-text recipe="heroTitle" key="hero.title" class="hero-title"></ui-text>
@@ -469,14 +482,14 @@
         <img src="assets/ana-profile.jpg" alt="Dra. Ana Nascimento" class="about-img">
       </div>
       <div class="about-right">
-        <ui-text recipe="sectionTitle" key="about.title" class="about-title" style="--semicomposed--text--color: #ffffff;"></ui-text>
+        <ui-text recipe="sectionTitle" color="white" key="about.title" class="about-title"></ui-text>
         <div class="about-paragraphs">
-          <ui-text recipe="bodyText" key="about.lead" style="font-weight: 700; margin-bottom: 16px; --semicomposed--text--color: #ffffff;"></ui-text>
-          <ui-text recipe="bodyText" key="about.p1" style="margin-bottom: 16px; --semicomposed--text--color: #ffffff;"></ui-text>
-          <ui-text recipe="bodyText" key="about.p2" style="margin-bottom: 16px; --semicomposed--text--color: #ffffff;"></ui-text>
-          <ui-text recipe="bodyText" key="about.p3" style="margin-bottom: 16px; --semicomposed--text--color: #ffffff;"></ui-text>
+          <ui-text recipe="bodyText" color="white" key="about.lead" style="font-weight: 700;"></ui-text>
+          <ui-text recipe="bodyText" color="white" key="about.p1"></ui-text>
+          <ui-text recipe="bodyText" color="white" key="about.p2"></ui-text>
+          <ui-text recipe="bodyText" color="white" key="about.p3"></ui-text>
         </div>
-        <ui-button size="2xl" appearance="solid" key="hero.cta" icon="arrow-up-right" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
+        <ui-button size="2xl" appearance="solid" key="hero.cta" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
       </div>
     </div>
   </section>
@@ -523,7 +536,7 @@
 
         <ui-text recipe="bodyText" key="process.locationNote" class="process-location-note"></ui-text>
 
-        <ui-button size="2xl" appearance="solid" key="process.cta" icon="arrow-up-right" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
+        <ui-button size="2xl" appearance="solid" key="process.cta" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
       </div>
       <div class="process-right">
         <img src="https://ananascimento.adv.br/wp-content/uploads/2025/08/ANA-17-1.jpg" alt="Escritório Ana Nascimento" class="process-img">
@@ -553,8 +566,8 @@
   <section class="faq-section" id="faq">
     <div class="container reveal">
       <div class="section-title-center light-title">
-        <ui-text recipe="sectionTitle" key="faq.title"></ui-text>
-        <ui-text recipe="bodyText" key="faq.lead"></ui-text>
+        <ui-text recipe="sectionTitle" color="white" key="faq.title"></ui-text>
+        <ui-text recipe="bodyText" color="gold" key="faq.lead"></ui-text>
       </div>
 
       <div class="faq-list">
@@ -676,7 +689,7 @@
       </div>
 
       <div class="footer-col links-col">
-        <ul style="display: flex; flex-direction: column; gap: 8px;">
+        <ul class="footer-links-slot" style="display: flex; flex-direction: column; gap: 8px;">
           <li><ui-button appearance="transparent" size="sm" key="header.nav.inicio" href="#inicio"></ui-button></li>
           <li><ui-button appearance="transparent" size="sm" key="header.nav.area" href="#area"></ui-button></li>
           <li><ui-button appearance="transparent" size="sm" key="header.nav.sobre" href="#sobre"></ui-button></li>

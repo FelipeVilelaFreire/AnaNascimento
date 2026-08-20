@@ -1,18 +1,18 @@
 /* Design System Tokens - Ana Nascimento Advocacia */
 :root {
-  --color-navy: #2e3454;
-  --color-navy-dark: #222741;
-  --color-navy-light: #373d61;
-  --color-gold: #f2c455;
-  --color-gold-hover: #dcb044;
-  --color-text: #2e3454;
-  --color-text-muted: #626884;
+  --color-navy: #1b2419;
+  --color-navy-dark: #111710;
+  --color-navy-light: #283625;
+  --color-gold: #d6b86e;
+  --color-gold-hover: #bfa157;
+  --color-text: #1b2419;
+  --color-text-muted: #5c6c59;
   --color-white: #ffffff;
   --color-border: #e1e1e1;
   --color-border-light: rgba(255, 255, 255, 0.12);
 
-  --color-overlay-start: rgba(46, 52, 84, 0.93);
-  --color-overlay-end: rgba(46, 52, 84, 0.85);
+  --color-overlay-start: rgba(27, 36, 25, 0.96);
+  --color-overlay-end: rgba(27, 36, 25, 0.90);
 
   --font-heading: "Marcellus", Georgia, serif;
   --font-body: "Karla", Arial, sans-serif;

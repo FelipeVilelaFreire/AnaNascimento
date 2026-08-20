@@ -1,0 +1,136 @@
+﻿/* ==========================================================================
+   Receita Semi-Composed: Layout, Grid Math & Section Standard
+   Matriz Master Canônica de 20 Colunas do ServiceOS (Com Gutters do Theme)
+   ========================================================================== */
+
+/* 1. SEÇÕES (Paddings Verticais, Fundo Semântico & Transição) */
+section,
+[data-recipe-section] {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: var(--theme--spacing-3xl, 100px);
+  padding-bottom: var(--theme--spacing-3xl, 100px);
+  background-color: var(--semicomposed--surface--bg, transparent);
+  color: var(--semicomposed--surface--color, inherit);
+}
+
+/* Variação de Seção Hero Full Viewport */
+[data-recipe-section="hero"] {
+  min-height: clamp(560px, 86vh, 720px);
+  display: flex;
+  align-items: flex-end;
+  padding-top: 110px;
+  padding-bottom: 40px;
+}
+
+/* 2. CONTAINER PRINCIPAL FLUIDO (100% de Largura + Gutters do Theme) */
+.container {
+  width: 100%;
+  max-width: 100% !important;
+  margin: 0 auto;
+  padding-left: var(--theme--layout-desktop-gutter, 36px);
+  padding-right: var(--theme--layout-desktop-gutter, 36px);
+  box-sizing: border-box;
+}
+
+/* 3. MATRIZ MASTER CANÔNICA DE 20 COLUNAS DO SERVICEOS */
+[data-recipe-grid="20"] {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: var(--theme--layout-desktop-colGap, 24px);
+  align-items: center;
+  width: 100%;
+}
+
+/* HERO SECTION EM 18 COLUNAS ÚTEIS DE 20 (1 Coluna Offset + 11 Cols Texto + 7 Cols Foto + 1 Col Offset) */
+[data-recipe-grid="hero-18"] {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: var(--theme--layout-desktop-colGap, 30px);
+  align-items: flex-end;
+  width: 100%;
+}
+
+[data-recipe-grid="hero-18"] > .hero-left {
+  grid-column: 2 / span 11;
+  padding-bottom: 30px;
+}
+
+[data-recipe-grid="hero-18"] > .hero-right {
+  grid-column: 13 / span 7;
+}
+
+/* DELIMITAÇÕES CENTRALIZADAS */
+[data-recipe-grid="18-centered"] {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: var(--theme--layout-desktop-colGap, 24px);
+  align-items: center;
+}
+[data-recipe-grid="18-centered"] > * {
+  grid-column: 2 / span 18;
+}
+
+[data-recipe-grid="16-centered"] {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: var(--theme--layout-desktop-colGap, 24px);
+  align-items: center;
+}
+[data-recipe-grid="16-centered"] > * {
+  grid-column: 3 / span 16;
+}
+
+[data-recipe-grid="14-centered"] {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: var(--theme--layout-desktop-colGap, 24px);
+  align-items: center;
+}
+[data-recipe-grid="14-centered"] > * {
+  grid-column: 4 / span 14;
+}
+
+/* RESPONSIVIDADE FLUIDA (Tablet / Mobile) */
+@media (max-width: 992px) {
+  .container {
+    padding-left: var(--theme--layout-tablet-gutter, 20px);
+    padding-right: var(--theme--layout-tablet-gutter, 20px);
+  }
+
+  [data-recipe-grid="hero-18"],
+  [data-recipe-grid="18-centered"],
+  [data-recipe-grid="16-centered"],
+  [data-recipe-grid="14-centered"] {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  [data-recipe-grid="hero-18"] > .hero-left,
+  [data-recipe-grid="hero-18"] > .hero-right,
+  [data-recipe-grid="18-centered"] > *,
+  [data-recipe-grid="16-centered"] > *,
+  [data-recipe-grid="14-centered"] > * {
+    grid-column: span 1;
+  }
+
+  section,
+  [data-recipe-section] {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: var(--theme--layout-mobile-gutter, 16px);
+    padding-right: var(--theme--layout-mobile-gutter, 16px);
+  }
+
+  section,
+  [data-recipe-section] {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}

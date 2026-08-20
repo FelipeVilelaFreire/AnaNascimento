@@ -1,0 +1,109 @@
+﻿/* ==========================================================================
+   AppShell Module: Header (ServiceOS 3-Level Slots Standard: Left, Center, Right)
+   ========================================================================== */
+
+/* 1. ESTRUTURA FIXA DA CASCA SUPERIOR */
+.app-shell-header,
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: var(--theme--spacing-sm, 14px) 0;
+  background-color: var(--semicomposed--surface--bg, var(--theme--color-navy, #2e3454));
+  color: var(--semicomposed--surface--color, var(--theme--color-white, #ffffff));
+  border-bottom: var(--semicomposed--surface--border, var(--theme--borders-light, 1px solid rgba(255, 255, 255, 0.12)));
+  backdrop-filter: var(--semicomposed--surface--blur, none);
+  transition: padding var(--theme--motion-fast, 240ms ease), background-color var(--theme--motion-fast, 240ms ease), box-shadow var(--theme--motion-fast, 240ms ease);
+}
+
+/* Efeito de Scroll no Modo Acoplado */
+.app-shell-header[data-scroll-active="true"],
+.site-header[data-scroll-active="true"] {
+  padding: var(--theme--spacing-xs, 10px) 0;
+  box-shadow: var(--semicomposed--outer-elevation--header, var(--theme--elevation-md, 0 4px 20px rgba(0, 0, 0, 0.25)));
+  background-color: var(--semicomposed--surface--hover-bg, color-mix(in srgb, var(--theme--color-navy, #2e3454) 94%, #000 6%));
+  backdrop-filter: var(--semicomposed--surface--blur, var(--theme--ambient-backdrop-blur, blur(4px)));
+}
+
+/* Modo Flutuante (Floating Layout) */
+.site-header[data-header-layout="floating"],
+.app-shell-header[data-header-layout="floating"] {
+  top: var(--theme--spacing-md, 16px);
+  width: calc(100% - (var(--theme--layout-desktop-gutter, 36px) * 2));
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  border-radius: var(--semicomposed--surface--radius, var(--theme--radius-md, 8px));
+  box-shadow: var(--semicomposed--outer-elevation--header, var(--theme--elevation-lg, 0 10px 30px rgba(0, 0, 0, 0.25)));
+  background-color: var(--semicomposed--surface--bg, var(--theme--glass-card, rgba(255, 255, 255, 0.12)));
+  border: var(--semicomposed--surface--border, var(--theme--borders-light, 1px solid rgba(255, 255, 255, 0.2)));
+  backdrop-filter: var(--semicomposed--surface--blur, var(--theme--ambient-backdrop-blur, blur(8px)));
+}
+
+/* 2. ESTRUTURA DOS 3 NÍVEIS CANÔNICOS DO HEADER */
+.header-container,
+.app-shell-header-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 100% !important;
+  padding-left: var(--theme--layout-desktop-gutter, 36px);
+  padding-right: var(--theme--layout-desktop-gutter, 36px);
+  box-sizing: border-box;
+}
+
+/* NÍVEL 1: INÍCIO (Brand / Logo Alinhado à Esquerda) */
+.header-slot-left,
+.brand-logo {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo img {
+  height: 44px;
+  width: auto;
+  display: block;
+  transition: height var(--theme--motion-fast, 240ms ease);
+}
+
+.site-header[data-scroll-active="true"] .brand-logo img {
+  height: 38px;
+}
+
+/* NÍVEL 2: MEIO (Navegação Perfeitamente Centralizada na Tela) */
+.header-slot-center,
+.desktop-nav {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: var(--appshell--header-nav-gap, var(--theme--spacing-xl, 32px));
+}
+
+/* Ajuste Fino dos Links do Menu para remover padding extra de botão e igualar as tags <a> puras */
+.desktop-nav ui-button {
+  padding: 0 !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  transform: none !important;
+}
+
+/* NÍVEL 3: FIM (Ações & Idioma Alinhados à Direita) */
+.header-slot-right,
+.header-email {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: var(--theme--spacing-md, 16px);
+}
+
+.header-email-text {
+  display: flex;
+  align-items: center;
+  gap: var(--theme--spacing-xs, 8px);
+}

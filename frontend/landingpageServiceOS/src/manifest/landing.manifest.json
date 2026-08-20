@@ -1,0 +1,87 @@
+﻿{
+  "pageId": "ana-nascimento-landing",
+  "appshell": {
+    "headerLayout": "attached",
+    "headerHeightOffset": "80px"
+  },
+  "sections": [
+    {
+      "id": "inicio",
+      "navKey": "header.nav.inicio",
+      "navIcon": "home",
+      "showInNav": true,
+      "layoutRecipe": "hero",
+      "surfaceRecipe": "solid-navy",
+      "responsive": {
+        "desktop": { "cols": 18, "offset": 1, "heroLeftCols": 12, "heroRightCols": 6, "paddingTop": "140px", "paddingBottom": "60px" },
+        "tablet":  { "cols": 8,  "offset": 0, "paddingTop": "100px", "paddingBottom": "40px" },
+        "mobile":  { "cols": 4,  "offset": 0, "paddingTop": "80px",  "paddingBottom": "30px" }
+      }
+    },
+    {
+      "id": "area",
+      "navKey": "header.nav.area",
+      "navIcon": "briefcase",
+      "showInNav": true,
+      "layoutRecipe": "default",
+      "surfaceRecipe": "solid-navy",
+      "responsive": {
+        "desktop": { "cols": 16, "offset": 2, "paddingTop": "100px", "paddingBottom": "100px" },
+        "tablet":  { "cols": 8,  "offset": 0, "paddingTop": "60px",  "paddingBottom": "60px" },
+        "mobile":  { "cols": 4,  "offset": 0, "paddingTop": "40px",  "paddingBottom": "40px" }
+      }
+    },
+    {
+      "id": "sobre",
+      "navKey": "header.nav.sobre",
+      "navIcon": "user",
+      "showInNav": true,
+      "layoutRecipe": "default",
+      "surfaceRecipe": "solid-navy",
+      "responsive": {
+        "desktop": { "cols": 16, "offset": 2, "paddingTop": "100px", "paddingBottom": "100px" },
+        "tablet":  { "cols": 8,  "offset": 0, "paddingTop": "60px",  "paddingBottom": "60px" },
+        "mobile":  { "cols": 4,  "offset": 0, "paddingTop": "40px",  "paddingBottom": "40px" }
+      }
+    },
+    {
+      "id": "atendimento",
+      "navKey": "process.title",
+      "navIcon": "phone-call",
+      "showInNav": false,
+      "layoutRecipe": "default",
+      "surfaceRecipe": "solid-navy",
+      "responsive": {
+        "desktop": { "cols": 16, "offset": 2, "paddingTop": "100px", "paddingBottom": "100px" },
+        "tablet":  { "cols": 8,  "offset": 0, "paddingTop": "60px",  "paddingBottom": "60px" },
+        "mobile":  { "cols": 4,  "offset": 0, "paddingTop": "40px",  "paddingBottom": "40px" }
+      }
+    },
+    {
+      "id": "faq",
+      "navKey": "header.nav.faq",
+      "navIcon": "help-circle",
+      "showInNav": true,
+      "layoutRecipe": "default",
+      "surfaceRecipe": "glass-dark",
+      "responsive": {
+        "desktop": { "cols": 14, "offset": 3, "paddingTop": "100px", "paddingBottom": "100px" },
+        "tablet":  { "cols": 8,  "offset": 0, "paddingTop": "60px",  "paddingBottom": "60px" },
+        "mobile":  { "cols": 4,  "offset": 0, "paddingTop": "40px",  "paddingBottom": "40px" }
+      }
+    },
+    {
+      "id": "contato",
+      "navKey": "header.nav.contato",
+      "navIcon": "phone",
+      "showInNav": true,
+      "layoutRecipe": "default",
+      "surfaceRecipe": "solid-navy",
+      "responsive": {
+        "desktop": { "cols": 16, "offset": 2, "paddingTop": "100px", "paddingBottom": "100px" },
+        "tablet":  { "cols": 8,  "offset": 0, "paddingTop": "60px",  "paddingBottom": "60px" },
+        "mobile":  { "cols": 4,  "offset": 0, "paddingTop": "40px",  "paddingBottom": "40px" }
+      }
+    }
+  ]
+}

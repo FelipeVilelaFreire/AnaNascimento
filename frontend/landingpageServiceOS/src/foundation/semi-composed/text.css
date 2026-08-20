@@ -1,87 +1,98 @@
 ﻿/* ==========================================================================
-   1. RECEITA SEMI-COMPOSED: TEXT (VARIÁVEIS EXPLÍCITAS --theme--*)
+   1. RECEITA SEMI-COMPOSED: TEXT (CATÁLOGO COMPLETO DE PAPÉIS SEMÂNTICOS)
    ========================================================================== */
 
-[data-recipe-text="2xs"] {
-  font-family: var(--theme--font-body, var(--font-body));
-  font-size: var(--theme--typography-sizes-3xs, 11px);
-  line-height: var(--theme--typography-lineHeight-dense, 1.3);
-}
+/* Escala Pura de Tamanho 2XS -> 3XL */
+[data-recipe-text="2xs"] { font-family: var(--theme--font-body); font-size: var(--theme--typography-sizes-3xs, 11px); line-height: 1.3; }
+[data-recipe-text="xs"]  { font-family: var(--theme--font-body); font-size: var(--theme--typography-sizes-2xs, 12.5px); line-height: 1.5; }
+[data-recipe-text="sm"]  { font-family: var(--theme--font-body); font-size: var(--theme--typography-sizes-xs, 13.5px); line-height: 1.5; }
+[data-recipe-text="md"]  { font-family: var(--theme--font-body); font-size: var(--theme--typography-sizes-sm, 15px); line-height: 1.6; }
+[data-recipe-text="lg"]  { font-family: var(--theme--font-body); font-size: var(--theme--typography-sizes-md, 16px); line-height: 1.8; }
+[data-recipe-text="xl"]  { font-family: var(--theme--font-heading); font-size: var(--theme--typography-sizes-lg, 20px); line-height: 1.25; }
+[data-recipe-text="2xl"] { font-family: var(--theme--font-heading); font-size: var(--theme--typography-sizes-xl, 26px); line-height: 1.2; }
+[data-recipe-text="3xl"] { font-family: var(--theme--font-heading); font-size: var(--theme--typography-sizes-2xl, 36px); line-height: 1.15; }
 
-[data-recipe-text="xs"] {
-  font-family: var(--theme--font-body, var(--font-body));
-  font-size: var(--theme--typography-sizes-2xs, 12.5px);
-  line-height: var(--theme--typography-lineHeight-normal, 1.5);
-}
+/* --------------------------------------------------------------------------
+   CATÁLOGO CANÔNICO DE PAPÉIS SEMÂNTICOS DE TIPOGRAFIA (VARIAÇÃO DE CORES DO THEME)
+   -------------------------------------------------------------------------- */
 
-[data-recipe-text="sm"] {
-  font-family: var(--theme--font-body, var(--font-body));
-  font-size: var(--theme--typography-sizes-xs, 13.5px);
-  line-height: var(--theme--typography-lineHeight-normal, 1.5);
-}
-
-[data-recipe-text="md"] {
-  font-family: var(--theme--font-body, var(--font-body));
-  font-size: var(--theme--typography-sizes-sm, 15px);
-  line-height: var(--theme--typography-lineHeight-normal, 1.6);
-}
-
-[data-recipe-text="lg"] {
-  font-family: var(--theme--font-body, var(--font-body));
-  font-size: var(--theme--typography-sizes-md, 16px);
-  line-height: var(--theme--typography-lineHeight-relaxed, 1.8);
-}
-
-[data-recipe-text="xl"] {
-  font-family: var(--theme--font-heading, var(--font-heading));
-  font-size: var(--theme--typography-sizes-lg, 20px);
-  line-height: var(--theme--typography-lineHeight-snug, 1.25);
-}
-
-[data-recipe-text="2xl"] {
-  font-family: var(--theme--font-heading, var(--font-heading));
-  font-size: var(--theme--typography-sizes-xl, 26px);
-  line-height: var(--theme--typography-lineHeight-snug, 1.2);
-}
-
-[data-recipe-text="3xl"] {
-  font-family: var(--theme--font-heading, var(--font-heading));
+/* Títulos de Seção (Section Titles) */
+[data-recipe-text="sectionTitle"] {
+  font-family: var(--theme--font-heading);
   font-size: var(--theme--typography-sizes-2xl, 36px);
-  line-height: var(--theme--typography-lineHeight-tight, 1.15);
+  color: var(--semicomposed--text--color, var(--theme--color-navy, #2e3454));
+  line-height: 1.2;
 }
 
-/* Receitas Semânticas de Domínio */
+[data-recipe-text="sectionTitleInverted"] {
+  font-family: var(--theme--font-heading);
+  font-size: var(--theme--typography-sizes-2xl, 36px);
+  color: var(--semicomposed--text--color, var(--theme--color-white, #ffffff));
+  line-height: 1.2;
+}
+
+[data-recipe-text="sectionTitleAccent"] {
+  font-family: var(--theme--font-heading);
+  font-size: var(--theme--typography-sizes-2xl, 36px);
+  color: var(--semicomposed--text--color, var(--theme--color-gold, #f2c455));
+  line-height: 1.2;
+}
+
+/* Subtítulos & Eyebrows (Hero & Headers) */
 [data-recipe-text="heroEyebrow"] {
-  font-family: var(--theme--font-heading, var(--font-heading));
+  font-family: var(--theme--font-heading);
   font-size: var(--theme--typography-sizes-3xl, 40px);
-  color: var(--theme--color-gold, var(--color-gold));
+  color: var(--semicomposed--text--color, var(--theme--color-gold, #f2c455));
   line-height: 1.15;
 }
 
 [data-recipe-text="heroTitle"] {
-  font-family: var(--theme--font-heading, var(--font-heading));
+  font-family: var(--theme--font-heading);
   font-size: var(--theme--typography-sizes-4xl, 46px);
-  color: var(--theme--color-white, var(--color-white));
+  color: var(--semicomposed--text--color, var(--theme--color-white, #ffffff));
   line-height: 1.15;
 }
 
-[data-recipe-text="sectionTitle"] {
-  font-family: var(--theme--font-heading, var(--font-heading));
-  font-size: var(--theme--typography-sizes-2xl, 36px);
-  color: var(--theme--color-navy, var(--color-navy));
-  line-height: 1.2;
-}
-
+/* Parágrafos & Corpo de Texto (Body Texts) */
 [data-recipe-text="bodyText"] {
-  font-family: var(--theme--font-body, var(--font-body));
+  font-family: var(--theme--font-body);
   font-size: var(--theme--typography-sizes-md, 16px);
   line-height: var(--theme--typography-lineHeight-relaxed, 1.8);
-  color: var(--semicomposed--text--color, var(--theme--color-navy-dark, #2e3454));
+  color: var(--semicomposed--text--color, var(--theme--color-navy, #2e3454));
 }
 
+[data-recipe-text="bodyTextMuted"] {
+  font-family: var(--theme--font-body);
+  font-size: var(--theme--typography-sizes-sm, 15px);
+  line-height: var(--theme--typography-lineHeight-normal, 1.6);
+  color: var(--semicomposed--text--color, var(--theme--color-text-muted, #626884));
+}
+
+[data-recipe-text="bodyTextInverted"] {
+  font-family: var(--theme--font-body);
+  font-size: var(--theme--typography-sizes-md, 16px);
+  line-height: var(--theme--typography-lineHeight-relaxed, 1.8);
+  color: var(--semicomposed--text--color, var(--theme--color-white, #ffffff));
+}
+
+[data-recipe-text="bodyTextAccent"] {
+  font-family: var(--theme--font-body);
+  font-size: var(--theme--typography-sizes-md, 16px);
+  line-height: var(--theme--typography-lineHeight-normal, 1.6);
+  color: var(--semicomposed--text--color, var(--theme--color-gold, #f2c455));
+}
+
+/* Títulos de Cards */
 [data-recipe-text="cardTitle"] {
-  font-family: var(--theme--font-heading, var(--font-heading));
+  font-family: var(--theme--font-heading);
   font-size: var(--theme--typography-sizes-xl, 26px);
-  color: var(--theme--color-white, var(--color-white));
+  color: var(--semicomposed--text--color, var(--theme--color-white, #ffffff));
+  line-height: 1.25;
+}
+
+[data-recipe-text="cardTitleNavy"] {
+  font-family: var(--theme--font-heading);
+  font-size: var(--theme--typography-sizes-xl, 26px);
+  color: var(--semicomposed--text--color, var(--theme--color-navy, #2e3454));
   line-height: 1.25;
 }

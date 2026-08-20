@@ -1,0 +1,24 @@
+﻿/* ==========================================================================
+   AppShell Module: Bottom TabBar
+   Estrutura da casca de navegação inferior mobile (quando ativada).
+   ========================================================================== */
+
+.app-shell-bottom-tabbar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: var(--theme--color-navy-dark, #222741);
+  border-top: var(--theme--borders-light, 1px solid rgba(255, 255, 255, 0.12));
+  z-index: 999;
+}
+
+@media (max-width: 576px) {
+  .app-shell-bottom-tabbar[data-state="active"] {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}

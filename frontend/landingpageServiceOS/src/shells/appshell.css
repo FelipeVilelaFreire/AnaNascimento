@@ -1,0 +1,5 @@
+﻿/* Maestro Centralizador dos Módulos do AppShell */
+@import url("header/header.css");
+@import url("hamburguer/hamburguer.css");
+@import url("footer/footer.css");
+@import url("bottomtabbar/bottomtabbar.css");

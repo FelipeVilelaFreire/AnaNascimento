@@ -1,2 +1,7 @@
-﻿/* 6. Receita de Elevação Interna Semi-Composed: Inner Elevation */
-[data-recipe-inner-elevation="insetCard"] { box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06); }
+﻿/* ==========================================================================
+   Receita Semi-Composed: Inner Elevation Standard
+   Consome 100% dos tokens do Theme --theme--*
+   ========================================================================== */
+
+[data-recipe-inner-elevation="insetCard"] { box-shadow: inset 0 2px 4px var(--theme--glass-light, rgba(0, 0, 0, 0.06)); }
+[data-recipe-inner-elevation="insetField"] { box-shadow: inset 0 1px 3px var(--theme--glass-light, rgba(0, 0, 0, 0.10)); }

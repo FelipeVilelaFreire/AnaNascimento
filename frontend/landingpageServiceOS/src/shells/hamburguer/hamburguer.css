@@ -1,0 +1,43 @@
+﻿/* ==========================================================================
+   AppShell Module: Hamburguer & Mobile Drawer
+   Estrutura da casca do menu hamburguer e gaveta mobile.
+   ========================================================================== */
+
+.drawer-backdrop,
+.app-shell-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 1001;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--theme--motion-fast, 250ms ease);
+}
+
+.drawer-backdrop.active,
+.app-shell-drawer-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-drawer,
+.app-shell-drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100%;
+  background-color: var(--theme--color-navy-dark, #222741);
+  z-index: 1002;
+  box-shadow: var(--theme--elevation-xl, -5px 0 25px rgba(0, 0, 0, 0.4));
+  transition: right var(--theme--motion-normal, 300ms cubic-bezier(0.16, 1, 0.3, 1));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--theme--spacing-xl, 24px);
+}
+
+.mobile-drawer[data-drawer-state="open"],
+.app-shell-drawer[data-drawer-state="open"] {
+  right: 0;
+}

@@ -17,6 +17,7 @@ ui-button {
   border: var(--semicomposed--surface--border) !important;
   border-radius: var(--semicomposed--surface--radius, var(--theme--radius-2xs));
   backdrop-filter: var(--semicomposed--surface--blur, none);
+  vertical-align: middle;
 }
 
 ui-button:hover {
@@ -25,12 +26,37 @@ ui-button:hover {
   transform: var(--semicomposed--state-layer--hover, translateY(-2px));
 }
 
+.ui-button-link {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: inherit !important;
+  text-decoration: none !important;
+  gap: inherit;
+}
+
+.ui-button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.ui-button-icon svg {
+  width: 1.1em;
+  height: 1.1em;
+  display: block;
+}
+
 /* ESCALA PURA 2XS -> 3XL DERIVADA 100% DOS TOKENS DO THEME */
-ui-button[data-size="2xs"] { height: var(--theme--sizing-buttonHeightSm, 32px); padding: 0 var(--theme--spacing-xs, 10px); gap: var(--theme--spacing-2xs, 4px); font-size: var(--theme--typography-sizes-3xs, 11px); font-weight: var(--theme--typography-weights-semibold, 600); }
+ui-button[data-size="2xs"] { height: var(--theme--sizing-buttonHeightSm, 32px); padding: 0 var(--theme--spacing-xs, 10px); gap: var(--theme--spacing-2xs, 6px); font-size: var(--theme--typography-sizes-3xs, 11px); font-weight: var(--theme--typography-weights-semibold, 600); }
 ui-button[data-size="xs"]  { height: var(--theme--sizing-buttonHeightSm, 36px); padding: 0 var(--theme--spacing-sm, 12px); gap: var(--theme--spacing-xs, 8px);  font-size: var(--theme--typography-sizes-2xs, 12.5px); font-weight: var(--theme--typography-weights-semibold, 600); }
-ui-button[data-size="sm"]  { height: var(--theme--sizing-buttonHeightMd, 40px); padding: 0 var(--theme--spacing-md, 16px); gap: var(--theme--spacing-sm, 10px); font-size: var(--theme--typography-sizes-xs, 13.5px);  font-weight: var(--theme--typography-weights-semibold, 600); }
-ui-button[data-size="md"]  { height: var(--theme--sizing-buttonHeightMd, 44px); padding: 0 var(--theme--spacing-lg, 20px); gap: var(--theme--spacing-md, 12px); font-size: var(--theme--typography-sizes-sm, 14.5px); font-weight: var(--theme--typography-weights-semibold, 600); }
-ui-button[data-size="lg"]  { height: var(--theme--sizing-buttonHeightLg, 50px); padding: 0 var(--theme--spacing-xl, 24px); gap: var(--theme--spacing-lg, 16px); font-size: var(--theme--typography-sizes-md, 16px);   font-weight: var(--theme--typography-weights-bold, 700); }
-ui-button[data-size="xl"]  { height: var(--theme--sizing-buttonHeightLg, 54px); padding: 0 var(--theme--spacing-2xl, 28px); gap: var(--theme--spacing-xl, 20px); font-size: var(--theme--typography-sizes-lg, 18px);   font-weight: var(--theme--typography-weights-bold, 700); }
-ui-button[data-size="2xl"] { height: var(--theme--sizing-buttonHeightLg, 54px); padding: var(--theme--spacing-sm, 14px) var(--theme--spacing-xl, 32px); gap: var(--theme--spacing-md, 12px); font-size: var(--theme--typography-sizes-sm, 15px); font-weight: var(--theme--typography-weights-bold, 700); letter-spacing: var(--theme--typography-tracking-wider, 0.08em); text-transform: uppercase; }
-ui-button[data-size="3xl"] { height: var(--theme--spacing-3xl, 64px); padding: var(--theme--spacing-md, 20px) var(--theme--spacing-2xl, 44px); gap: var(--theme--spacing-lg, 24px); font-size: var(--theme--typography-sizes-lg, 22px); font-weight: var(--theme--typography-weights-bold, 700); letter-spacing: var(--theme--typography-tracking-wider, 0.08em); text-transform: uppercase; }
+ui-button[data-size="sm"]  { height: var(--theme--sizing-buttonHeightMd, 40px); padding: 0 var(--theme--spacing-md, 16px); gap: var(--theme--spacing-sm, 8px); font-size: var(--theme--typography-sizes-xs, 13.5px);  font-weight: var(--theme--typography-weights-semibold, 600); }
+ui-button[data-size="md"]  { height: var(--theme--sizing-buttonHeightMd, 44px); padding: 0 var(--theme--spacing-lg, 20px); gap: var(--theme--spacing-md, 10px); font-size: var(--theme--typography-sizes-sm, 14.5px); font-weight: var(--theme--typography-weights-semibold, 600); }
+ui-button[data-size="lg"]  { height: var(--theme--sizing-buttonHeightLg, 50px); padding: 0 var(--theme--spacing-xl, 24px); gap: var(--theme--spacing-lg, 12px); font-size: var(--theme--typography-sizes-md, 16px);   font-weight: var(--theme--typography-weights-bold, 700); }
+ui-button[data-size="xl"]  { height: var(--theme--sizing-buttonHeightLg, 54px); padding: 0 var(--theme--spacing-2xl, 28px); gap: var(--theme--spacing-xl, 14px); font-size: var(--theme--typography-sizes-lg, 18px);   font-weight: var(--theme--typography-weights-bold, 700); }
+ui-button[data-size="2xl"] { height: var(--theme--sizing-buttonHeightLg, 54px); padding: 0 var(--theme--spacing-xl, 32px); gap: var(--theme--spacing-md, 10px); font-size: var(--theme--typography-sizes-sm, 15px); font-weight: var(--theme--typography-weights-bold, 700); letter-spacing: var(--theme--typography-tracking-wider, 0.08em); text-transform: uppercase; }
+ui-button[data-size="3xl"] { height: var(--theme--spacing-3xl, 64px); padding: 0 var(--theme--spacing-2xl, 44px); gap: var(--theme--spacing-lg, 14px); font-size: var(--theme--typography-sizes-lg, 22px); font-weight: var(--theme--typography-weights-bold, 700); letter-spacing: var(--theme--typography-tracking-wider, 0.08em); text-transform: uppercase; }

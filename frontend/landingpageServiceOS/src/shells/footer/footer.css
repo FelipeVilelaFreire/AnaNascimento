@@ -1,0 +1,12 @@
+﻿/* ==========================================================================
+   AppShell Module: Footer
+   Estrutura da casca do rodapé institucional.
+   ========================================================================== */
+
+.site-footer,
+.app-shell-footer {
+  width: 100%;
+  background-color: color-mix(in srgb, var(--theme--color-navy, #2e3454) 90%, #000 10%);
+  border-top: var(--theme--borders-light, 1px solid rgba(255, 255, 255, 0.12));
+  padding-top: var(--theme--spacing-2xl, 60px);
+}
