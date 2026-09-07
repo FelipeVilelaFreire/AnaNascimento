@@ -1,4 +1,4 @@
-﻿/* Web Component Nativo ui-button com Motor de Direct Token Props (Zero Fricção) */
+/* Web Component Nativo ui-button com Motor de Direct Token Props (Zero Fricção) */
 function renderAllUiButtons() {
   var buttonElements = document.querySelectorAll("ui-button");
   buttonElements.forEach(function(el) {
@@ -61,6 +61,8 @@ function renderAllUiButtons() {
     lucide.createIcons();
   }
 }
+
+window.renderAllUiButtons = renderAllUiButtons;
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", renderAllUiButtons);

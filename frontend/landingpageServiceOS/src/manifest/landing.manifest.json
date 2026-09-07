@@ -1,86 +1,186 @@
-﻿{
+{
   "pageId": "ana-nascimento-landing",
   "appshell": {
     "headerLayout": "attached",
-    "headerHeightOffset": "80px"
+    "headerHeightRecipe": "fluid-header-height",
+    "headerSurfaceRecipe": "solid-navy",
+    "headerNavigationMode": "links"
   },
+  "assets": {
+    "brandLogo": "assets/ana-logo-dark.png",
+    "heroBg": "assets/hero-bg.jpg",
+    "aboutBg": "assets/about-bg.jpg",
+    "anaHeroPhoto": "assets/ana-hero.png",
+    "officePhoto": "https://ananascimento.adv.br/wp-content/uploads/2025/08/ANA-17-1.jpg"
+  },
+  "navigation": [
+    { "id": "inicio", "key": "header.nav.inicio", "icon": "home" },
+    { "id": "area", "key": "header.nav.area", "icon": "briefcase" },
+    { "id": "sobre", "key": "header.nav.sobre", "icon": "user" },
+    { "id": "depoimentos", "key": "header.nav.depoimentos", "icon": "message-square" },
+    { "id": "faq", "key": "header.nav.faq", "icon": "help-circle" },
+    { "id": "contato", "key": "header.nav.contato", "icon": "phone" }
+  ],
   "sections": [
     {
       "id": "inicio",
-      "navKey": "header.nav.inicio",
-      "navIcon": "home",
-      "showInNav": true,
-      "layoutRecipe": "hero",
-      "surfaceRecipe": "solid-navy",
+      "layout": {
+        "type": "hero-peek",
+        "viewportHeightRatio": "90vh"
+      },
+      "background": {
+        "type": "image",
+        "imageToken": "heroBg",
+        "backgroundPosition": "center",
+        "backgroundAttachment": "fixed",
+        "overlay": {
+          "enabled": true,
+          "colorStartToken": "overlay-start",
+          "colorEndToken": "overlay-end"
+        }
+      },
+      "personImage": {
+        "assetKey": "anaHeroPhoto",
+        "altText": "Dra. Ana Nascimento",
+        "size": "lg",
+        "alignment": "bottom-right",
+        "floatingBadge": {
+          "enabled": true,
+          "icon": "phone-call",
+          "text": "(21) 99656-7447",
+          "href": "https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"
+        }
+      },
       "responsive": {
-        "desktop": { "cols": 18, "offset": 1, "heroLeftCols": 12, "heroRightCols": 6, "paddingTop": "140px", "paddingBottom": "60px" },
-        "tablet":  { "cols": 8,  "offset": 0, "paddingTop": "100px", "paddingBottom": "40px" },
-        "mobile":  { "cols": 4,  "offset": 0, "paddingTop": "80px",  "paddingBottom": "30px" }
+        "desktop": {
+          "totalMasterCols": 20,
+          "outerOffset": 1.5,
+          "usefulContentCols": 17,
+          "heroLeftCols": 10.5,
+          "heroRightCols": 6.5,
+          "gapBetweenParts": "24px",
+          "titleMaxWidth": "680px",
+          "descMaxWidth": "620px"
+        },
+        "tablet":  { "cols": 8,  "offset": 0 },
+        "mobile":  { "cols": 4,  "offset": 0 }
       }
     },
     {
       "id": "area",
-      "navKey": "header.nav.area",
-      "navIcon": "briefcase",
-      "showInNav": true,
-      "layoutRecipe": "default",
-      "surfaceRecipe": "solid-navy",
+      "layout": {
+        "type": "default",
+        "paddingTopToken": "spacing-3xl",
+        "paddingBottomToken": "spacing-3xl"
+      },
+      "background": {
+        "type": "solid",
+        "colorToken": "navy"
+      },
       "responsive": {
-        "desktop": { "cols": 16, "offset": 2, "paddingTop": "100px", "paddingBottom": "100px" },
-        "tablet":  { "cols": 8,  "offset": 0, "paddingTop": "60px",  "paddingBottom": "60px" },
-        "mobile":  { "cols": 4,  "offset": 0, "paddingTop": "40px",  "paddingBottom": "40px" }
+        "desktop": { "totalMasterCols": 20, "outerOffset": 1.5, "usefulContentCols": 17 },
+        "tablet":  { "cols": 8,  "offset": 0 },
+        "mobile":  { "cols": 4,  "offset": 0 }
       }
     },
     {
       "id": "sobre",
-      "navKey": "header.nav.sobre",
-      "navIcon": "user",
-      "showInNav": true,
-      "layoutRecipe": "default",
-      "surfaceRecipe": "solid-navy",
+      "layout": {
+        "type": "default",
+        "paddingTopToken": "spacing-3xl",
+        "paddingBottomToken": "spacing-3xl"
+      },
+      "background": {
+        "type": "image",
+        "imageToken": "aboutBg",
+        "backgroundPosition": "center",
+        "backgroundAttachment": "scroll",
+        "overlay": {
+          "enabled": true,
+          "colorStartToken": "overlay-start",
+          "colorEndToken": "overlay-end"
+        }
+      },
       "responsive": {
-        "desktop": { "cols": 16, "offset": 2, "paddingTop": "100px", "paddingBottom": "100px" },
-        "tablet":  { "cols": 8,  "offset": 0, "paddingTop": "60px",  "paddingBottom": "60px" },
-        "mobile":  { "cols": 4,  "offset": 0, "paddingTop": "40px",  "paddingBottom": "40px" }
+        "desktop": { "totalMasterCols": 20, "outerOffset": 1.5, "usefulContentCols": 17 },
+        "tablet":  { "cols": 8,  "offset": 0 },
+        "mobile":  { "cols": 4,  "offset": 0 }
       }
     },
     {
       "id": "atendimento",
-      "navKey": "process.title",
-      "navIcon": "phone-call",
-      "showInNav": false,
-      "layoutRecipe": "default",
-      "surfaceRecipe": "solid-navy",
+      "layout": {
+        "type": "default",
+        "paddingTopToken": "spacing-3xl",
+        "paddingBottomToken": "spacing-3xl"
+      },
+      "background": {
+        "type": "solid",
+        "colorToken": "navy"
+      },
       "responsive": {
-        "desktop": { "cols": 16, "offset": 2, "paddingTop": "100px", "paddingBottom": "100px" },
-        "tablet":  { "cols": 8,  "offset": 0, "paddingTop": "60px",  "paddingBottom": "60px" },
-        "mobile":  { "cols": 4,  "offset": 0, "paddingTop": "40px",  "paddingBottom": "40px" }
+        "desktop": { "totalMasterCols": 20, "outerOffset": 1.5, "usefulContentCols": 17 },
+        "tablet":  { "cols": 8,  "offset": 0 },
+        "mobile":  { "cols": 4,  "offset": 0 }
+      }
+    },
+    {
+      "id": "depoimentos",
+      "layout": {
+        "type": "standard-section",
+        "paddingY": "100px"
+      },
+      "background": {
+        "type": "solid",
+        "colorToken": "navy"
+      },
+      "header": {
+        "titleKey": "depoimentos.title",
+        "leadKey": "depoimentos.lead"
+      },
+      "testimonials": [
+        { "author": "Mariana Souza", "quote": "Excelente atendimento e condução impecável do meu caso trabalhista. Dra. Ana foi extremamente estratégica.", "tag": "Direito do Trabalho" },
+        { "author": "Roberto Mendes", "quote": "Consegui regularizar meu imóvel e fazer o planejamento da minha família com total segurança jurídica.", "tag": "Direito Imobiliário & Patrimonial" },
+        { "author": "Camila Alencar", "quote": "Acolhimento humanizado em um momento muito delicado de partilha de bens. Recomendo de olhos fechados.", "tag": "Direito de Família" }
+      ],
+      "responsive": {
+        "desktop": { "totalMasterCols": 20, "outerOffset": 1, "usefulContentCols": 18 },
+        "tablet":  { "cols": 8,  "offset": 0 },
+        "mobile":  { "cols": 4,  "offset": 0 }
       }
     },
     {
       "id": "faq",
-      "navKey": "header.nav.faq",
-      "navIcon": "help-circle",
-      "showInNav": true,
-      "layoutRecipe": "default",
-      "surfaceRecipe": "glass-dark",
+      "layout": {
+        "type": "compact",
+        "paddingTopToken": "spacing-2xl",
+        "paddingBottomToken": "spacing-2xl"
+      },
+      "background": {
+        "type": "glass",
+        "glassToken": "dark"
+      },
       "responsive": {
-        "desktop": { "cols": 14, "offset": 3, "paddingTop": "100px", "paddingBottom": "100px" },
-        "tablet":  { "cols": 8,  "offset": 0, "paddingTop": "60px",  "paddingBottom": "60px" },
-        "mobile":  { "cols": 4,  "offset": 0, "paddingTop": "40px",  "paddingBottom": "40px" }
+        "desktop": { "totalMasterCols": 20, "outerOffset": 3, "usefulContentCols": 14 },
+        "tablet":  { "cols": 8,  "offset": 0 },
+        "mobile":  { "cols": 4,  "offset": 0 }
       }
     },
     {
       "id": "contato",
-      "navKey": "header.nav.contato",
-      "navIcon": "phone",
-      "showInNav": true,
-      "layoutRecipe": "default",
-      "surfaceRecipe": "solid-navy",
+      "layout": {
+        "type": "default",
+        "paddingTopToken": "spacing-3xl",
+        "paddingBottomToken": "spacing-3xl"
+      },
+      "background": {
+        "type": "solid",
+        "colorToken": "navy"
+      },
       "responsive": {
-        "desktop": { "cols": 16, "offset": 2, "paddingTop": "100px", "paddingBottom": "100px" },
-        "tablet":  { "cols": 8,  "offset": 0, "paddingTop": "60px",  "paddingBottom": "60px" },
-        "mobile":  { "cols": 4,  "offset": 0, "paddingTop": "40px",  "paddingBottom": "40px" }
+        "desktop": { "totalMasterCols": 20, "outerOffset": 1.5, "usefulContentCols": 17 },
+        "tablet":  { "cols": 8,  "offset": 0 },
+        "mobile":  { "cols": 4,  "offset": 0 }
       }
     }
   ]

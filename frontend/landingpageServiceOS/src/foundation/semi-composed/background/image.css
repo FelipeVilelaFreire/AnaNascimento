@@ -1,0 +1,28 @@
+﻿/* ==========================================================================
+   Semi-Composed Background: Image & Opacity Overlay
+   Receita de Fundo com Imagem + Sobreposição de Gradiente + Opacidade
+   ========================================================================== */
+
+[data-recipe-background-image="hero"] {
+  background:
+    linear-gradient(90deg, var(--theme--overlay-start, rgba(23, 26, 42, 0.94)), var(--theme--overlay-end, rgba(23, 26, 42, 0.75))),
+    url("assets/hero-bg.jpg") center / cover no-repeat fixed,
+    var(--theme--color-navy, #2e3454) !important;
+  color: var(--theme--color-white, #ffffff);
+}
+
+[data-recipe-background-image="about"] {
+  background:
+    linear-gradient(90deg, var(--theme--overlay-start, rgba(23, 26, 42, 0.9)), var(--theme--overlay-end, rgba(23, 26, 42, 0.8))),
+    url("assets/about-bg.jpg") center / cover no-repeat fixed,
+    var(--theme--color-navy, #2e3454) !important;
+  color: var(--theme--color-white, #ffffff);
+}
+
+[data-recipe-background-image="faq"] {
+  background:
+    linear-gradient(90deg, var(--theme--overlay-start, rgba(23, 26, 42, 0.92)), var(--theme--overlay-end, rgba(23, 26, 42, 0.88))),
+    url("assets/faq-bg.jpg") center / cover no-repeat fixed,
+    var(--theme--color-navy, #2e3454) !important;
+  color: var(--theme--color-white, #ffffff);
+}

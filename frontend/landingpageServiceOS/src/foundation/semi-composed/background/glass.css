@@ -1,0 +1,12 @@
+﻿/* ==========================================================================
+   Semi-Composed Background: Glass Section
+   Receita de Fundo Transparente com Desfoque de Vidro (Backdrop Blur)
+   ========================================================================== */
+
+[data-recipe-background-glass="dark"] {
+  background-color: var(--theme--glass-card, rgba(255, 255, 255, 0.08)) !important;
+  backdrop-filter: var(--theme--ambient-backdrop-blur, blur(8px)) !important;
+  border-top: var(--theme--borders-light, 1px solid rgba(255, 255, 255, 0.12));
+  border-bottom: var(--theme--borders-light, 1px solid rgba(255, 255, 255, 0.12));
+  color: var(--theme--color-white, #ffffff);
+}

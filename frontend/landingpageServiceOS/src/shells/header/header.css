@@ -1,48 +1,98 @@
-﻿/* ==========================================================================
-   AppShell Module: Header (ServiceOS 3-Level Slots Standard: Left, Center, Right)
+/* ==========================================================================
+   AppShell Module: Header (ServiceOS Multi-Device & Surface Standard)
    ========================================================================== */
 
-/* 1. ESTRUTURA FIXA DA CASCA SUPERIOR */
+/* 1. MODO DESKTOP PADRÃO (>= 993px) */
 .app-shell-header,
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
-  padding: var(--theme--spacing-sm, 14px) 0;
+  z-index: var(--theme--layers-header, 100);
+  height: var(--appshell--header-height, clamp(64px, 8vh, 80px));
+  min-height: var(--appshell--header-height, clamp(64px, 8vh, 80px));
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 0;
   background-color: var(--semicomposed--surface--bg, var(--theme--color-navy, #2e3454));
   color: var(--semicomposed--surface--color, var(--theme--color-white, #ffffff));
-  border-bottom: var(--semicomposed--surface--border, var(--theme--borders-light, 1px solid rgba(255, 255, 255, 0.12)));
-  backdrop-filter: var(--semicomposed--surface--blur, none);
-  transition: padding var(--theme--motion-fast, 240ms ease), background-color var(--theme--motion-fast, 240ms ease), box-shadow var(--theme--motion-fast, 240ms ease);
+  border-bottom: var(--semicomposed--surface--border, 1px solid var(--theme--borders-light, rgba(255, 255, 255, 0.12)));
+  backdrop-filter: var(--semicomposed--surface--blur, blur(6px));
+  transition: 
+    height var(--theme--motion-fast, 200ms ease), 
+    background-color var(--theme--motion-fast, 200ms ease), 
+    border-color var(--theme--motion-fast, 200ms ease), 
+    box-shadow var(--theme--motion-fast, 200ms ease), 
+    top var(--theme--motion-fast, 200ms ease), 
+    border-radius var(--theme--motion-fast, 200ms ease), 
+    width var(--theme--motion-fast, 200ms ease);
 }
 
-/* Efeito de Scroll no Modo Acoplado */
-.app-shell-header[data-scroll-active="true"],
-.site-header[data-scroll-active="true"] {
-  padding: var(--theme--spacing-xs, 10px) 0;
-  box-shadow: var(--semicomposed--outer-elevation--header, var(--theme--elevation-md, 0 4px 20px rgba(0, 0, 0, 0.25)));
-  background-color: var(--semicomposed--surface--hover-bg, color-mix(in srgb, var(--theme--color-navy, #2e3454) 94%, #000 6%));
-  backdrop-filter: var(--semicomposed--surface--blur, var(--theme--ambient-backdrop-blur, blur(4px)));
+/* Receitas de Superfície (Surface Vestures) */
+.site-header[data-header-surface="solid-navy"],
+.app-shell-header[data-header-surface="solid-navy"] {
+  --semicomposed--surface--bg: var(--theme--color-navy, #2e3454);
+  --semicomposed--surface--color: var(--theme--color-white, #ffffff);
+  --semicomposed--surface--border: 1px solid var(--theme--borders-light, rgba(255, 255, 255, 0.12));
 }
 
-/* Modo Flutuante (Floating Layout) */
+.site-header[data-header-surface="glass"],
+.app-shell-header[data-header-surface="glass"] {
+  --semicomposed--surface--bg: rgba(46, 52, 84, 0.82);
+  --semicomposed--surface--blur: blur(12px);
+  --semicomposed--surface--color: var(--theme--color-white, #ffffff);
+  --semicomposed--surface--border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.site-header[data-header-surface="transparent"],
+.app-shell-header[data-header-surface="transparent"] {
+  --semicomposed--surface--bg: transparent;
+  --semicomposed--surface--blur: none;
+  --semicomposed--surface--border: 1px solid transparent;
+}
+
+/* Modo Layout Acoplado (Attached) */
+.site-header[data-header-layout="attached"],
+.app-shell-header[data-header-layout="attached"] {
+  top: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--theme--borders-light, rgba(255, 255, 255, 0.12));
+}
+
+/* Modo Layout Flutuante (Floating) - CONTRATO APPSHELL */
 .site-header[data-header-layout="floating"],
 .app-shell-header[data-header-layout="floating"] {
   top: var(--theme--spacing-md, 16px);
-  width: calc(100% - (var(--theme--layout-desktop-gutter, 36px) * 2));
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  border-radius: var(--semicomposed--surface--radius, var(--theme--radius-md, 8px));
-  box-shadow: var(--semicomposed--outer-elevation--header, var(--theme--elevation-lg, 0 10px 30px rgba(0, 0, 0, 0.25)));
-  background-color: var(--semicomposed--surface--bg, var(--theme--glass-card, rgba(255, 255, 255, 0.12)));
-  border: var(--semicomposed--surface--border, var(--theme--borders-light, 1px solid rgba(255, 255, 255, 0.2)));
-  backdrop-filter: var(--semicomposed--surface--blur, var(--theme--ambient-backdrop-blur, blur(8px)));
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - (var(--theme--spacing-md, 16px) * 2));
+  max-width: 1440px;
+  border-radius: var(--semicomposed--surface--radius, var(--theme--radius-lg, 8px));
+  border: 1px solid var(--theme--borders-light, rgba(255, 255, 255, 0.14));
+  box-shadow: var(--semicomposed--outer-elevation--header, var(--theme--elevation-md, 0 10px 30px rgba(0, 0, 0, 0.18)));
 }
 
-/* 2. ESTRUTURA DOS 3 NÍVEIS CANÔNICOS DO HEADER */
+/* Efeito de Scroll no Header (Backdrop Glass + Sombra + Borda Fina) */
+.app-shell-header[data-scroll-active="true"],
+.site-header[data-scroll-active="true"] {
+  height: clamp(56px, 6.5vh, 68px);
+  min-height: clamp(56px, 6.5vh, 68px);
+  box-shadow: var(--semicomposed--outer-elevation--header, 0 8px 25px rgba(0, 0, 0, 0.28));
+  background-color: var(--semicomposed--surface--hover-bg, rgba(34, 39, 65, 0.94)) !important;
+  backdrop-filter: blur(10px) !important;
+  border-color: rgba(242, 196, 85, 0.22) !important;
+}
+
+/* 2. ESTRUTURA DOS 3 NÍVEIS CANÔNICOS DO HEADER DESKTOP */
 .header-container,
 .app-shell-header-container {
   display: grid;
@@ -64,46 +114,132 @@
 }
 
 .brand-logo img {
-  height: 44px;
+  height: clamp(34px, 4.5vh, 44px);
   width: auto;
   display: block;
-  transition: height var(--theme--motion-fast, 240ms ease);
+  transition: height var(--theme--motion-fast, 180ms ease);
 }
 
 .site-header[data-scroll-active="true"] .brand-logo img {
-  height: 38px;
+  height: clamp(30px, 3.8vh, 38px);
 }
 
-/* NÍVEL 2: MEIO (Navegação Perfeitamente Centralizada na Tela) */
+/* NÍVEL 2: MEIO (Navegação Consumindo os Tokens Universais) */
 .header-slot-center,
 .desktop-nav {
   justify-self: center;
   display: flex;
   align-items: center;
-  gap: var(--appshell--header-nav-gap, var(--theme--spacing-xl, 32px));
+  gap: var(--appshell--header-nav-gap, var(--theme--spacing-2xl, 32px));
+  white-space: nowrap;
 }
 
-/* Ajuste Fino dos Links do Menu para remover padding extra de botão e igualar as tags <a> puras */
+.desktop-nav ui-button,
+.desktop-nav ui-button * {
+  white-space: nowrap !important;
+  flex-shrink: 0;
+}
+
 .desktop-nav ui-button {
-  padding: 0 !important;
-  height: auto !important;
-  border-radius: 0 !important;
-  font-size: 15px !important;
-  font-weight: 500 !important;
-  transform: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  --semicomposed--surface--color: var(--theme--color-white, #ffffff);
+  --semicomposed--surface--hover-color: var(--theme--color-gold, #f2c455);
 }
 
-/* NÍVEL 3: FIM (Ações & Idioma Alinhados à Direita) */
+/* NÍVEL 3: FIM (Ações & Idioma Consumindo os Tokens Universais typography.sizes.xs e spacing.md) */
 .header-slot-right,
 .header-email {
   justify-self: end;
   display: flex;
   align-items: center;
   gap: var(--theme--spacing-md, 16px);
+  white-space: nowrap;
 }
 
 .header-email-text {
   display: flex;
   align-items: center;
   gap: var(--theme--spacing-xs, 8px);
+  font-size: var(--theme--typography-sizes-xs, 13.5px);
+  white-space: nowrap;
+}
+
+.header-right-mobile {
+  display: none;
+}
+
+/* 3. ADAPTAÇÃO INTELIGENTE PARA ZOOM 150% & TELAS MÉDIAS (1041px -> 1280px) */
+@media (max-width: 1280px) {
+  .header-container,
+  .app-shell-header-container {
+    padding-left: var(--theme--spacing-md, 16px);
+    padding-right: var(--theme--spacing-md, 16px);
+  }
+
+  .desktop-nav {
+    gap: var(--theme--spacing-sm, 12px);
+  }
+
+  /* Compacta o texto longo do e-mail para dar espaço total aos links de navegação */
+  .header-email-text ui-text {
+    display: none !important;
+  }
+}
+
+/* 4. MODO TABLET & MOBILE (< 1040px) */
+@media (max-width: 1040px) {
+  .site-header,
+  .app-shell-header {
+    height: clamp(56px, 7vh, 68px);
+    min-height: clamp(56px, 7vh, 68px);
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: var(--theme--layout-tablet-gutter, 20px);
+    padding-right: var(--theme--layout-tablet-gutter, 20px);
+  }
+
+  .header-slot-center,
+  .desktop-nav,
+  .header-slot-right,
+  .header-email {
+    display: none !important;
+  }
+
+  .header-right-mobile {
+    display: flex !important;
+    align-items: center;
+    gap: var(--theme--spacing-sm, 12px);
+  }
+
+  .mobile-hamburger {
+    background: transparent;
+    border: none;
+    color: var(--theme--color-gold, #f2c455);
+    cursor: pointer;
+    padding: var(--theme--spacing-xs, 8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-hamburger svg {
+    width: var(--theme--sizing-iconMd, 24px);
+    height: var(--theme--sizing-iconMd, 24px);
+  }
+}
+
+@media (max-width: 576px) {
+  .header-container {
+    padding-left: var(--theme--layout-mobile-gutter, 16px);
+    padding-right: var(--theme--layout-mobile-gutter, 16px);
+  }
+
+  .brand-logo img {
+    height: 32px;
+  }
 }

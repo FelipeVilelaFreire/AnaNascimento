@@ -1,30 +1,36 @@
-﻿/* ==========================================================================
-   Receita Semi-Composed: Layout, Grid Math & Section Standard
-   Matriz Master Canônica de 20 Colunas do ServiceOS (Com Gutters do Theme)
+/* ==========================================================================
+   Receita Semi-Composed: Layout & Section Heights (ServiceOS Standard)
+   Matriz Master Canônica de 20 Colunas do ServiceOS com Layout Fluido Puro
    ========================================================================== */
 
-/* 1. SEÇÕES (Paddings Verticais, Fundo Semântico & Transição) */
+/* 1. SEÇÕES (Paddings Verticais Dinâmicos por Tokens Fluidos) */
 section,
 [data-recipe-section] {
   width: 100%;
   position: relative;
   box-sizing: border-box;
-  padding-top: var(--theme--spacing-3xl, 100px);
-  padding-bottom: var(--theme--spacing-3xl, 100px);
+  padding-top: var(--theme--spacing-3xl, 80px);
+  padding-bottom: var(--theme--spacing-3xl, 80px);
   background-color: var(--semicomposed--surface--bg, transparent);
   color: var(--semicomposed--surface--color, inherit);
 }
 
-/* Variação de Seção Hero Full Viewport */
-[data-recipe-section="hero"] {
-  min-height: clamp(560px, 86vh, 720px);
+/* 2. UX DE ALTURA: HERO FOLD PEEKING DINÂMICO PURO (90% SEÇÃO 1 + 10% SEÇÃO 2) */
+[data-recipe-section="hero"],
+[data-recipe-section="hero-peek"] {
+  height: 90vh;
+  min-height: 90vh;
+  max-height: 90vh;
+  box-sizing: border-box;
   display: flex;
-  align-items: flex-end;
-  padding-top: 110px;
-  padding-bottom: 40px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: var(--appshell--header-height, 80px) !important;
+  padding-bottom: var(--theme--spacing-md, 14px) !important;
+  overflow: hidden;
 }
 
-/* 2. CONTAINER PRINCIPAL FLUIDO (100% de Largura + Gutters do Theme) */
+/* 3. CONTAINER PRINCIPAL FLUIDO (100% de Largura + Gutters do Theme) */
 .container {
   width: 100%;
   max-width: 100% !important;
@@ -34,7 +40,7 @@ section,
   box-sizing: border-box;
 }
 
-/* 3. MATRIZ MASTER CANÔNICA DE 20 COLUNAS DO SERVICEOS */
+/* 4. MATRIZ MASTER CANÔNICA DE 20 COLUNAS DO SERVICEOS */
 [data-recipe-grid="20"] {
   display: grid;
   grid-template-columns: repeat(20, 1fr);
@@ -43,50 +49,68 @@ section,
   width: 100%;
 }
 
-/* HERO SECTION EM 18 COLUNAS ÚTEIS DE 20 (1 Coluna Offset + 11 Cols Texto + 7 Cols Foto + 1 Col Offset) */
-[data-recipe-grid="hero-18"] {
+/* HERO SECTION EM 17 COLUNAS ÚTEIS COM GAP DINÂMICO DO THEME */
+[data-recipe-grid="hero-17"] {
   display: grid;
-  grid-template-columns: repeat(20, 1fr);
-  gap: var(--theme--layout-desktop-colGap, 30px);
+  grid-template-columns: repeat(40, 1fr);
+  gap: var(--theme--layout-desktop-colGap, 24px);
   align-items: flex-end;
   width: 100%;
+  height: 100%;
 }
 
-[data-recipe-grid="hero-18"] > .hero-left {
-  grid-column: 2 / span 11;
-  padding-bottom: 30px;
+[data-recipe-grid="hero-17"] > .hero-left {
+  grid-column: 4 / span 21;
 }
 
-[data-recipe-grid="hero-18"] > .hero-right {
-  grid-column: 13 / span 7;
+[data-recipe-grid="hero-17"] > .hero-right {
+  grid-column: 25 / span 13;
 }
 
-/* DELIMITAÇÕES CENTRALIZADAS */
-[data-recipe-grid="18-centered"] {
+.hero-title {
+  max-width: var(--hero-title-max-width, 640px) !important;
+}
+
+.hero-description {
+  max-width: var(--hero-desc-max-width, 580px) !important;
+}
+
+.hero-person-img {
+  width: var(--hero-person-width, clamp(380px, 36vw, 520px));
+  max-height: var(--hero-person-max-height, clamp(460px, 78vh, 620px));
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: bottom right;
+}
+
+/* Receitas de Tamanho Declarativas do Manifesto */
+.hero-person-img[data-size="sm"] { --hero-person-width: clamp(300px, 28vw, 400px); --hero-person-max-height: clamp(380px, 65vh, 480px); }
+.hero-person-img[data-size="md"] { --hero-person-width: clamp(340px, 32vw, 460px); --hero-person-max-height: clamp(420px, 72vh, 540px); }
+.hero-person-img[data-size="lg"] { --hero-person-width: clamp(380px, 36vw, 520px); --hero-person-max-height: clamp(460px, 78vh, 620px); }
+.hero-person-img[data-size="xl"] { --hero-person-width: clamp(420px, 40vw, 580px); --hero-person-max-height: clamp(500px, 82vh, 680px); }
+.hero-person-img[data-size="2xl"]{ --hero-person-width: clamp(460px, 44vw, 650px); --hero-person-max-height: clamp(540px, 88vh, 740px); }
+
+/* DELIMITAÇÃO DE 17 COLUNAS ÚTEIS CENTRALIZADAS */
+[data-recipe-grid="17-centered"] {
   display: grid;
-  grid-template-columns: repeat(20, 1fr);
+  grid-template-columns: repeat(40, 1fr);
   gap: var(--theme--layout-desktop-colGap, 24px);
   align-items: center;
+  width: 100%;
 }
-[data-recipe-grid="18-centered"] > * {
-  grid-column: 2 / span 18;
-}
-
-[data-recipe-grid="16-centered"] {
-  display: grid;
-  grid-template-columns: repeat(20, 1fr);
-  gap: var(--theme--layout-desktop-colGap, 24px);
-  align-items: center;
-}
-[data-recipe-grid="16-centered"] > * {
-  grid-column: 3 / span 16;
+[data-recipe-grid="17-centered"] > * {
+  grid-column: 4 / span 34;
 }
 
+/* DELIMITAÇÃO DE 14 COLUNAS ÚTEIS CENTRALIZADAS (3.0 OFFSET EM CADA PONTA - FAQ) */
 [data-recipe-grid="14-centered"] {
   display: grid;
   grid-template-columns: repeat(20, 1fr);
   gap: var(--theme--layout-desktop-colGap, 24px);
   align-items: center;
+  width: 100%;
 }
 [data-recipe-grid="14-centered"] > * {
   grid-column: 4 / span 14;
@@ -94,31 +118,35 @@ section,
 
 /* RESPONSIVIDADE FLUIDA (Tablet / Mobile) */
 @media (max-width: 992px) {
-  .container {
-    padding-left: var(--theme--layout-tablet-gutter, 20px);
-    padding-right: var(--theme--layout-tablet-gutter, 20px);
-  }
-
-  [data-recipe-grid="hero-18"],
-  [data-recipe-grid="18-centered"],
-  [data-recipe-grid="16-centered"],
+  .container,
+  [data-recipe-grid="20"],
+  [data-recipe-grid="hero-17"],
+  [data-recipe-grid="17-centered"],
   [data-recipe-grid="14-centered"] {
     grid-template-columns: 1fr;
     gap: 24px;
   }
 
-  [data-recipe-grid="hero-18"] > .hero-left,
-  [data-recipe-grid="hero-18"] > .hero-right,
+  [data-recipe-section="hero"],
+  [data-recipe-section="hero-peek"] {
+    height: 90svh;
+    min-height: 90svh;
+    max-height: 90svh;
+    padding-top: calc(var(--appshell--header-height, 80px) + 10px) !important;
+    padding-bottom: var(--theme--spacing-sm, 12px) !important;
+  }
+
+  [data-recipe-grid="hero-17"] > .hero-left,
+  [data-recipe-grid="hero-17"] > .hero-right,
   [data-recipe-grid="18-centered"] > *,
-  [data-recipe-grid="16-centered"] > *,
+  [data-recipe-grid="17-centered"] > *,
   [data-recipe-grid="14-centered"] > * {
     grid-column: span 1;
   }
 
-  section,
-  [data-recipe-section] {
-    padding-top: 60px;
-    padding-bottom: 60px;
+  .hero-title,
+  .hero-description {
+    max-width: 100% !important;
   }
 }
 
@@ -126,11 +154,5 @@ section,
   .container {
     padding-left: var(--theme--layout-mobile-gutter, 16px);
     padding-right: var(--theme--layout-mobile-gutter, 16px);
-  }
-
-  section,
-  [data-recipe-section] {
-    padding-top: 40px;
-    padding-bottom: 40px;
   }
 }

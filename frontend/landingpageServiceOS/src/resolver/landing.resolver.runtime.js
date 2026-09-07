@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    ServiceOS Universal i18n Locales & Resolver Runtime
    Dicionários completos com a seção Entre em Contato em pt-BR, en-US e de-DE
    ========================================================================== */
@@ -7,7 +7,7 @@
   var dictionaries = {
     "pt-BR": {
       header: {
-        nav: { inicio: "Início", area: "Áreas de Atuação", sobre: "Sobre Nós", faq: "Perguntas Frequentes", contato: "Contato" },
+        nav: { inicio: "Início", area: "Áreas de Atuação", sobre: "Sobre Nós", depoimentos: "Depoimentos", faq: "Perguntas Frequentes", contato: "Contato" },
         email: "ana@ananascimento.adv.br",
         themeButtonText: "Mudar Cor",
         mobileThemeButtonText: "Cor"
@@ -24,6 +24,10 @@
         title: "NOSSO DIFERENCIAL",
         lead1: "Acreditamos que cada cliente traz não apenas uma demanda jurídica, mas também uma história que merece ser ouvida e tratada com seriedade. Por isso, unimos atendimento humanizado e especializado à atuação estratégica, conduzindo cada caso com dedicação e segurança jurídica.",
         lead2: "Nosso propósito vai além da defesa de direitos: atuamos também no planejamento preventivo e patrimonial, protegendo famílias, trabalhadores e empresas em decisões que impactam diretamente o presente e o futuro."
+      },
+      depoimentos: {
+        title: "O QUE DIZEM NOSSOS CLIENTES",
+        lead: "Histórias de superação e resultados jurídicos de quem confiou no nosso trabalho com excelência."
       },
       faq: {
         title: "PERGUNTAS FREQUENTES",
@@ -64,7 +68,7 @@
 
     "en-US": {
       header: {
-        nav: { inicio: "Home", area: "Practice Areas", sobre: "About Us", faq: "FAQ", contato: "Contact" },
+        nav: { inicio: "Home", area: "Practice Areas", sobre: "About Us", depoimentos: "Testimonials", faq: "FAQ", contato: "Contact" },
         email: "ana@ananascimento.adv.br",
         themeButtonText: "Theme Color",
         mobileThemeButtonText: "Theme"
@@ -78,6 +82,7 @@
         phone: "(21) 99656-7447"
       },
       difference: { title: "OUR DIFFERENCE", lead1: "We believe that every client brings a story that deserves attention and strategic dedication." },
+      depoimentos: { title: "WHAT OUR CLIENTS SAY", lead: "Stories of overcoming and legal excellence from those who trusted us." },
       faq: { title: "FREQUENTLY ASKED QUESTIONS", lead: "Get answers to your questions quickly and simply." },
       about: { title: "Dr. Ana Nascimento", lead: "Advocating with heart, technique, and purpose." },
       cards: { saibaMais: "LEARN MORE" },
@@ -96,7 +101,7 @@
 
     "de-DE": {
       header: {
-        nav: { inicio: "Startseite", area: "Rechtsgebiete", sobre: "Über uns", faq: "FAQ", contato: "Kontakt" },
+        nav: { inicio: "Startseite", area: "Rechtsgebiete", sobre: "Über uns", depoimentos: "Erfahrungsberichte", faq: "FAQ", contato: "Kontakt" },
         email: "ana@ananascimento.adv.br",
         themeButtonText: "Farbe Ändern",
         mobileThemeButtonText: "Farbe"
@@ -110,6 +115,7 @@
         phone: "(21) 99656-7447"
       },
       difference: { title: "UNSER UNTERSCHIED", lead1: "Wir glauben, dass jeder Mandant eine Geschichte mitbringt, die Respekt verdient." },
+      depoimentos: { title: "WAS UNSERE MANDANTEN SAGEN", lead: "Erfolgsgeschichten von Menschen, die unserer Kanzlei vertraut haben." },
       faq: { title: "HÄUFIG GESTELLTE FRAGEN", lead: "Schnelle und einfache Antworten auf Ihre Fragen." },
       about: { title: "Dr. Ana Nascimento", lead: "Mit Herz, Technik und Zielstrebigkeit anwaltlich tätig." },
       cards: { saibaMais: "MEHR ERFAHREN" },

@@ -1,0 +1,24 @@
+﻿/* ==========================================================================
+   Semi-Composed Background: Solid
+   Receita de Fundo Sólido para Seções (Navy, White, Dark, Gold)
+   ========================================================================== */
+
+[data-recipe-background-solid="navy"] {
+  background-color: var(--theme--color-navy, #2e3454) !important;
+  color: var(--theme--color-white, #ffffff);
+}
+
+[data-recipe-background-solid="white"] {
+  background-color: var(--theme--color-white, #ffffff) !important;
+  color: var(--theme--color-navy, #2e3454);
+}
+
+[data-recipe-background-solid="dark"] {
+  background-color: var(--theme--color-navy-dark, #222741) !important;
+  color: var(--theme--color-white, #ffffff);
+}
+
+[data-recipe-background-solid="gold"] {
+  background-color: var(--theme--color-gold, #f2c455) !important;
+  color: var(--theme--color-navy, #2e3454);
+}

@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    Foundation UI Primitive: Text - ServiceOS Standard
    Consome 100% das receitas tipográficas do semi-composed (text.css)
    ========================================================================== */
@@ -13,9 +13,39 @@ ui-text {
   margin-bottom: var(--theme--spacing-md, 16px);
 }
 
+ui-text[recipe="heroTitle"],
+ui-text[recipe="heroTitle"] * {
+  font-size: var(--theme--typography-sizes-4xl, 46px) !important;
+}
+
+ui-text[recipe="heroEyebrow"],
+ui-text[recipe="heroEyebrow"] * {
+  font-size: var(--theme--typography-sizes-3xl, 40px) !important;
+}
+
+ui-text[recipe="heroDescription"],
+ui-text[recipe="heroDescription"] * {
+  font-size: var(--theme--typography-sizes-md, 16.5px) !important;
+}
+
 ui-text[inline="true"] {
   display: inline !important;
   margin-bottom: 0 !important;
+}
+
+ui-text[color="gold"] {
+  color: var(--theme--color-gold, #f2c455) !important;
+  --semicomposed--text--color: var(--theme--color-gold, #f2c455) !important;
+}
+
+ui-text[color="white"] {
+  color: var(--theme--color-white, #ffffff) !important;
+  --semicomposed--text--color: var(--theme--color-white, #ffffff) !important;
+}
+
+ui-text[color="navy"] {
+  color: var(--theme--color-navy, #2e3454) !important;
+  --semicomposed--text--color: var(--theme--color-navy, #2e3454) !important;
 }
 
 .about-paragraphs ui-text {

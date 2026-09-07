@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="src/foundation/ui/icon/icon.css">
 
   <!-- ServiceOS Foundation UI Primitives & Resolver Runtime -->
+  <script src="src/manifest/design-system/web.theme.resolver.bundle.js"></script>
   <script defer src="src/resolver/landing.resolver.runtime.js"></script>
   <script defer src="src/resolver/appshell.navigation.resolver.js"></script>
   <script defer src="src/shells/appshell.js"></script>
@@ -37,8 +38,8 @@
 </head>
 <body>
 
-  <!-- 1. Header / Navegação Fixo em Modo Padrão Acoplado -->
-  <header class="site-header" data-header-layout="attached">
+  <!-- 1. AppShell Header Component (Composto pelos 3 Níveis Canônicos) -->
+  <header class="site-header" id="main-header" data-header-layout="attached" data-header-surface="solid-navy">
     <div class="container header-container">
       <!-- NÍVEL 1: INÍCIO (Brand Logo Left) -->
       <div class="header-slot-left">
@@ -62,7 +63,7 @@
       <div class="header-slot-right header-email">
         <div class="header-email-text">
           <ui-icon name="mail" color="gold"></ui-icon>
-          <ui-text recipe="bodyText" color="gold" key="header.email" inline="true" style="font-size: 14.5px; margin-bottom: 0;"></ui-text>
+          <ui-text recipe="bodyText" color="gold" key="header.email" inline="true"></ui-text>
         </div>
         <select class="lang-selector-select" id="lang-selector-btn" onchange="if(window.LandingResolverRuntime){ window.LandingResolverRuntime.setLocale(this.value); }">
           <option value="pt-BR" selected>🇧🇷 PT</option>
@@ -351,7 +352,9 @@
       <ui-button appearance="transparent" size="md" key="header.nav.contato" href="#contato" class="drawer-link"></ui-button>
     </nav>
     <div class="drawer-footer">
+      <!-- Seletor de cores desativado no menu hamburguer mobile; preservado para reativacao.
       <ui-button size="sm" appearance="glass" key="drawer.themeButtonText" icon="palette" id="theme-modal-mobile-btn" style="width: 100%; margin-bottom: 12px; justify-content: center;"></ui-button>
+      -->
       <ui-button size="2xl" appearance="solid" key="drawer.cta" icon="arrow-up-right" href="https://api.whatsapp.com/send/?phone=%2B5521996567447&text&type=phone_number&app_absent=0"></ui-button>
     </div>
   </aside>
@@ -359,7 +362,7 @@
   <!-- 2. Hero Section -->
   <section class="hero-section" id="inicio" data-recipe-section="hero">
     <div class="hero-overlay"></div>
-    <div class="container hero-container" data-recipe-grid="hero-18">
+    <div class="container hero-container" data-recipe-grid="hero-17">
       <div class="hero-left">
         <ui-text recipe="heroEyebrow" key="hero.eyebrow" class="hero-eyebrow"></ui-text>
         <ui-text recipe="heroTitle" key="hero.title" class="hero-title"></ui-text>

@@ -1,2 +1,4 @@
-﻿/* Maestro do Módulo Background */
-@import url("hero-bg.css");
+﻿/* Centralizador do Módulo Semi-Composed Background */
+@import url("solid.css");
+@import url("image.css");
+@import url("glass.css");

@@ -1,5 +1,16 @@
-﻿export const defaultTokens = {
-  // 1. Colors & 20 Palette Themes
+export function fluidLength(min, max, options = {}) {
+  return Object.freeze({
+    kind: "fluid-length",
+    min,
+    max,
+    viewportMin: options.viewportMin ?? 360,
+    viewportMax: options.viewportMax ?? 1440,
+    outputUnit: options.outputUnit ?? "rem"
+  });
+}
+
+export const defaultTokens = {
+  // 1. Colors & 20 Palette Themes (FIXO)
   colors: {
     navy: "#2e3454",
     navyDark: "#222741",
@@ -15,28 +26,28 @@
     overlayEnd: "rgba(46, 52, 84, 0.85)"
   },
   
-  // 2. Layout & Physics (Grids & Columns)
+  // 2. Layout & Physics
   layout: {
-    desktop: { cols: 12, colGap: "24px", gutter: "24px", maxWidth: "1620px" },
+    desktop: { cols: 20, colGap: fluidLength(16, 24), gutter: fluidLength(20, 36), maxWidth: "100%" },
     tablet: { cols: 8, colGap: "16px", gutter: "20px", maxWidth: "992px" },
     mobile: { cols: 4, colGap: "12px", gutter: "16px", maxWidth: "576px" }
   },
 
-  // 3. Typography (Full Scale)
+  // 3. Typography (ESCALA ELEGANTE PRODUÇÃO)
   typography: {
     fontHeading: '"Marcellus", Georgia, serif',
     fontBody: '"Karla", Arial, sans-serif',
     sizes: {
       "3xs": "11px",
-      "2xs": "12.5px",
-      xs: "13.5px",
-      sm: "15px",
-      md: "16px.5",
-      lg: "20px",
-      xl: "26px",
-      "2xl": "34px",
-      "3xl": "40px",
-      "4xl": "46px"
+      "2xs": fluidLength(11, 12.5),
+      xs: fluidLength(12, 13.5),
+      sm: fluidLength(13.5, 15),
+      md: fluidLength(14.5, 16.5),
+      lg: fluidLength(16, 18),
+      xl: fluidLength(20, 24),
+      "2xl": fluidLength(24, 30),
+      "3xl": fluidLength(28, 36),
+      "4xl": fluidLength(30, 42)
     },
     weights: {
       light: 300,
@@ -60,52 +71,50 @@
     }
   },
 
-  // 4. Spacing (Full Scale 2px -> 135px)
+  // 4. Spacing
   spacing: {
-    "3xs": "2px",
-    "2xs": "4px",
-    xs: "8px",
-    sm: "12px",
-    md: "16px",
-    lg: "24px",
-    xl: "32px",
-    "2xl": "48px",
-    "3xl": "60px",
-    "4xl": "90px",
-    "5xl": "110px",
-    "6xl": "135px"
+    none: "0px",
+    "3xs": fluidLength(2, 4),
+    "2xs": fluidLength(4, 6),
+    xs: fluidLength(6, 8),
+    sm: fluidLength(8, 12),
+    md: fluidLength(10, 14),
+    lg: fluidLength(14, 20),
+    xl: fluidLength(18, 26),
+    "2xl": fluidLength(28, 48),
+    "3xl": fluidLength(40, 80)
   },
 
-  // 5. Radius (Perfil Sobrio / Pontudo Juridico da Dra. Ana Nascimento)
+  // 5. Radius
   radius: {
     none: "0px",
     "3xs": "1px",
-    "2xs": "2px", // --radius-sm oficial (2px)
+    "2xs": "2px",
     xs: "2px",
-    sm: "4px",   // Cards e Iframe (4px)
-    md: "6px",   // Theme Modal (6px a 12px)
+    sm: "4px",
+    md: "6px",
     lg: "8px",
-    xl: "16px",  // Modal Mobile Bottom Sheet (16px a 20px)
-    full: "9999px" // Buttons Pills, Badges e Circulo do Telefone
+    xl: "16px",
+    full: "9999px"
   },
 
-  // 6. Sizing (Alturas & Dimensões de Componentes)
+  // 6. Sizing
   sizing: {
-    buttonHeightSm: "36px",
-    buttonHeightMd: "44px",
-    buttonHeightLg: "54px",
+    buttonHeightSm: fluidLength(30, 34),
+    buttonHeightMd: fluidLength(36, 42),
+    buttonHeightLg: fluidLength(44, 50),
     iconSm: "18px",
     iconMd: "24px",
     iconLg: "28px",
     iconXl: "44px",
     avatarSm: "36px",
     avatarMd: "56px",
-    avatarLg: "290px", // Foto Ana Hero Mobile (290px a 324px)
-    avatarXl: "420px", // Foto Ana Hero Desktop (420px)
-    avatar2xl: "560px" // Foto Ana Sobre Nós Desktop (560px)
+    avatarLg: fluidLength(420, 520),
+    avatarXl: fluidLength(520, 680),
+    avatar2xl: fluidLength(640, 780)
   },
 
-  // 7. Opacity (Níveis de Transparência)
+  // 7. Opacity
   opacity: {
     transparent: 0,
     subtle: 0.08,
@@ -113,71 +122,31 @@
     medium: 0.4,
     dimmed: 0.65,
     overlay: 0.96,
-    solid: 1
+    opaque: 1
   },
 
-  // 8. Elevation (Sombras & Profundidade)
+  // 8. Elevation
   elevation: {
     flat: "none",
     low: "0 2px 8px rgba(0,0,0,0.08)",
-    md: "0 10px 30px rgba(0, 0, 0, 0.18)", // Phone Box
-    high: "0 20px 40px rgba(0, 0, 0, 0.3)", // Modal Box
-    floating: "-5px 0 25px rgba(0, 0, 0, 0.4)" // Drawer Mobile
+    md: "0 10px 30px rgba(0, 0, 0, 0.18)",
+    high: "0 20px 40px rgba(0, 0, 0, 0.3)",
+    floating: "-5px 0 25px rgba(0, 0, 0, 0.4)"
   },
 
-  // 9. Glass (Efeitos Glassmorphism)
+  // 9. Glass
   glass: {
     light: "rgba(255, 255, 255, 0.1)",
     card: "rgba(255, 255, 255, 0.12)",
     dark: "rgba(0, 0, 0, 0.65)"
   },
 
-  // 10. Ambient Effects (Iluminação & Glow)
-  ambientEffects: {
-    glowColor: "var(--color-gold)",
-    bloomIntensity: "0.15",
-    backdropBlur: "blur(4px)"
-  },
-
-  // 11. Gradients (Receitas de Gradiente Dinâmico)
-  gradients: {
-    heroOverlay: "linear-gradient(90deg, var(--color-overlay-start), var(--color-overlay-end))"
-  },
-
-  // 12. Blur (Backdrop Filters)
-  blur: {
-    none: "0px",
-    sm: "4px",
-    md: "8px",
-    lg: "16px",
-    xl: "24px"
-  },
-
-  // 13. Motion (Animações & Transições)
+  // 10. Motion
   motion: {
     fast: "180ms ease",
     normal: "300ms ease",
     fluid: "450ms cubic-bezier(0.16, 1, 0.3, 1)",
     heroEntrance: "900ms cubic-bezier(0.16, 1, 0.3, 1)",
     slow: "1100ms cubic-bezier(0.22, 1, 0.36, 1)"
-  },
-
-  // 14. Layers (Z-Index / Camadas)
-  layers: {
-    base: 1,
-    phoneBox: 2,
-    header: 100,
-    drawer: 999,
-    modal: 1000,
-    tooltip: 2000
-  },
-
-  // 15. Borders (Linhas, Divisores & Traços)
-  borders: {
-    none: "none",
-    thin: "1px solid var(--color-border)",
-    light: "1px solid var(--color-border-light)",
-    goldDivider: "1.5px solid var(--color-gold)",
-    activeCard: "2px solid var(--color-navy)"
   }
 };
